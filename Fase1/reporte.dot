@@ -1,0 +1,7 @@
+digraph Repuestos {
+label = "Lista Circular (José Luis - Saloj)";
+labelloc = "t";
+    rankdir=LR;
+    "1" [label="Id: 1\nRepuesto: Filtro de aceite\nCosto: 15.75"];
+    "1" -> "1";
+}

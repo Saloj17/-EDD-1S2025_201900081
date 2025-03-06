@@ -1,0 +1,8 @@
+digraph G {
+    node [shape=ellipse];
+    rankdir=LR;
+    subgraph cluster_0 {
+        label = "Lista Doble";
+        n0 [label = "ID: 2 \n ID Usuario: 1 \n Marca: Toyota \n Modelo: 2000 \n Placa: ABC123"];
+    }
+}

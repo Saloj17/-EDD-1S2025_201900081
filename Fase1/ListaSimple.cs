@@ -1,0 +1,255 @@
+using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Diagnostics;
+using System.IO;
+using System.Runtime.InteropServices;
+
+namespace Estructuras
+{
+    public unsafe class ListaSimple
+    {
+        private NodoSimple* cabeza;
+
+
+        //* Método constructor
+        public ListaSimple()
+        {
+            cabeza = null;
+        }
+
+
+        //* Método para insertar un nuevo nodo en la lista
+        public void Insertar(int id, string Nombre, string Apellido, string Correo, string Contrasenia)
+        {
+            NodoSimple* nuevoNodo = (NodoSimple*)Marshal.AllocHGlobal(sizeof(NodoSimple));
+            *nuevoNodo = new NodoSimple(id, Nombre, Apellido, Correo, Contrasenia);
+
+            if (cabeza == null)
+            {
+                cabeza = nuevoNodo;
+            }
+            else
+            {
+                NodoSimple* actual = cabeza;
+                while (actual->Siguiente != null)
+                {
+                    actual = actual->Siguiente;
+                }
+                actual->Siguiente = nuevoNodo;
+            }
+        }
+
+
+
+        public void Mostrar()
+        {
+            NodoSimple* actual = cabeza;
+            if (actual == null)
+            {
+                Console.WriteLine("La lista está vacía");
+            }
+            while (actual != null)
+            {
+                string nombre = new string(actual->Nombre);
+                string apellido = new string(actual->Apellido); 
+                string correo = new string(actual->Correo);
+                string contrasenia = new string(actual->Contrasenia);
+                Console.WriteLine($"ID: {actual->Id}, Nombre: {nombre}, Apellido: {apellido}, Correo: {correo}, Contrasenia: {contrasenia}");
+                actual = actual->Siguiente;
+            }
+        }
+
+        //* Método para liberar memoria manualmente
+        public void LiberarMemoria()
+        {
+            NodoSimple* actual = cabeza;
+            while (actual != null)
+            {
+                NodoSimple* temp = actual;
+                actual = actual->Siguiente;
+                Marshal.FreeHGlobal((IntPtr)temp);
+            }
+            cabeza = null;
+        }
+
+        //metodo para vaciar la lista
+        public void Vaciar()
+        {
+            NodoSimple* actual = cabeza;
+            while (actual != null)
+            {
+                NodoSimple* temp = actual;
+                actual = actual->Siguiente;
+                Marshal.FreeHGlobal((IntPtr)temp);
+            }
+            cabeza = null;
+        }
+        public bool Buscar(int id)
+        //validar si no hay nada false
+
+        {
+            if (cabeza == null)
+            {
+                return false;
+            }
+            else
+            {
+                NodoSimple* actual = cabeza;
+                while (actual != null)
+                {
+                    if (actual->Id == id)
+                    {
+                        return true;
+                    }
+                    actual = actual->Siguiente;
+                }
+                return false;
+            }
+        }
+
+        //metodo para buscar por id y devolver el nodo
+        public NodoSimple* BuscarNodo(int id)
+        {
+            if (cabeza == null)
+            {   
+                
+                return null;
+            }
+            else
+            {
+                NodoSimple* actual = cabeza;
+                while (actual != null)
+                {
+                    if (actual->Id == id)
+                    {
+                        return actual;
+                    }
+                    actual = actual->Siguiente;
+                }
+                return null;
+            }
+        }
+
+        //metodo para eliminar un nodo
+        public void Eliminar(int id)
+        {
+            if (cabeza == null)
+            {
+                return;
+            }
+            if (cabeza->Id == id)
+            {
+                NodoSimple* temp = cabeza;
+                cabeza = cabeza->Siguiente;
+                Marshal.FreeHGlobal((IntPtr)temp);
+                return;
+            }
+            NodoSimple* actual = cabeza;
+            NodoSimple* prev = null;
+            while (actual != null)
+            {
+                if (actual->Id == id)
+                {
+                    prev->Siguiente = actual->Siguiente;
+                    Marshal.FreeHGlobal((IntPtr)actual);
+                    return;
+                }
+                prev = actual;
+                actual = actual->Siguiente;
+            }
+        }
+
+        //metodo para modificar un nodo
+        public void Modificar(int id=0, string nombre="", string apellido="", string correo="", string contrasenia="")
+        {
+            NodoSimple* actual = cabeza;
+            while (actual != null)
+            {
+                if (actual->Id == id)
+                {   
+                    //Mande valor al getter
+                    actual->SetNombre(nombre);
+                    actual->SetApellido(apellido);
+                    actual->SetCorreo(correo);
+                    actual->SetContrasenia(contrasenia);
+                    break;
+                }
+                actual = actual->Siguiente;
+            }
+        }
+
+        
+        //* Método para generar el código Graphviz
+        public void GenerarGraphviz()
+        {
+            // Si la lista está vacía, generamos un solo nodo con "NULL"
+            if (cabeza == null)
+            {
+                Console.WriteLine("La lista está vacía");
+            }
+
+            // Iniciamos el código Graphviz
+            var graphviz = "digraph G {\n";
+            graphviz += "    node [shape=ellipse];\n";
+            graphviz += "    rankdir=LR;\n";
+            graphviz += "    subgraph cluster_0 {\n";
+            graphviz += "        label = \"Lista Simple\";\n";
+
+            // Iterar sobre los nodos de la lista y construir la representación Graphviz
+            NodoSimple* actual = cabeza;
+            int index = 0;
+
+            while (actual != null)
+            {
+                string nombre = new string(actual->Nombre);
+                string apellido = new string(actual->Apellido); 
+                string correo = new string(actual->Correo);
+                string contrasenia = new string(actual->Contrasenia);
+                graphviz += $"        n{index} [label = \"ID: {actual->Id} \\n Nombre: {nombre} \\n Apellido: {apellido} \\n Correo: {correo} \\n Contrasenia: {contrasenia} \"];\n";
+                actual = actual->Siguiente;
+                index++;
+            }
+
+            // Conectar los nodos
+            actual = cabeza;
+            for (int i = 0; actual != null && actual->Siguiente != null; i++)
+            {
+                graphviz += $"        n{i} -> n{i + 1};\n";
+                actual = actual->Siguiente;
+            }
+
+            graphviz += "    }\n";
+            graphviz += "}\n";
+
+            string filePath = "usuarios.dot";
+
+            // Escribir el contenido en el archivo
+            File.WriteAllText(filePath, graphviz);
+
+            Console.WriteLine($"Archivo .dot generado: {filePath}");
+
+            //generar la imagen
+            ProcessStartInfo startInfo = new ProcessStartInfo("dot")
+            {
+                Arguments = $"-Tpng usuarios.dot -o usuarios.png",
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            Process process = new Process
+            {
+                StartInfo = startInfo
+            };
+
+            process.Start();
+            process.WaitForExit();
+
+            //Mostrar la imagen generada
+            Process.Start(new ProcessStartInfo("usuarios.png") { UseShellExecute = true });
+
+        }
+    }
+}

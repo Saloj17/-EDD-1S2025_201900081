@@ -1,0 +1,10 @@
+digraph G {
+    node [shape=ellipse];
+    rankdir=LR;
+    subgraph cluster_0 {
+        label = "Lista Simple";
+        n0 [label = "ID: 2 \n Nombre: Juan \n Apellido: Pérez \n Correo: juan.perez@mail.com \n Contrasenia: 1234 "];
+        n1 [label = "ID: 3 \n Nombre: Rosa \n Apellido: Pérez \n Correo: juan.perez@mail.com \n Contrasenia: 234 "];
+        n0 -> n1;
+    }
+}

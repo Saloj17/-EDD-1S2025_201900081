@@ -1,0 +1,30 @@
+[
+    {
+      "ID": 2,
+      "Nombres": "Juan",
+      "Apellidos": "Pérez",
+      "Correo": "juan.perez@mail.com",
+      "Contrasenia": "1234"
+    },
+    {
+      "ID": 2,
+      "Nombres": "María",
+      "Apellidos": "Gómez",
+      "Correo": "maria.gomez@mail.com",
+      "Contrasenia":"1234"
+    },
+    {
+      "ID": 3,
+      "Nombres": "Rosa",
+      "Apellidos": "Pérez",
+      "Correo": "juan.perez@mail.com",
+      "Contrasenia": "234"
+    },
+    {
+      "ID": 3,
+      "Nombres": "Ashlee",
+      "Apellidos": "Heranadez",
+      "Correo": "ashlee.gomez@mail.com",
+      "Contrasenia":"4321"
+    }
+  ]

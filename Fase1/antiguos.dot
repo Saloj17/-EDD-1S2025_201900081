@@ -1,0 +1,20 @@
+digraph G {
+    node [shape=ellipse];
+    rankdir=LR;
+    subgraph cluster_0 {
+        label = "Lista Doble";
+        n0 [label = "ID: 1 \n ID Usuario: 1 \n Marca: Toyota \n Modelo: 2000 \n Placa: ABC123"];
+        n1 [label = "ID: 2 \n ID Usuario: 2 \n Marca: Ford \n Modelo: 2001 \n Placa: XYZ456"];
+        n2 [label = "ID: 3 \n ID Usuario: 1 \n Marca: Toyota \n Modelo: 2002 \n Placa: ABC123"];
+        n3 [label = "ID: 4 \n ID Usuario: 2 \n Marca: Ford \n Modelo: 2003 \n Placa: XYZ456"];
+        n4 [label = "ID: 5 \n ID Usuario: 1 \n Marca: Toyota \n Modelo: 2004 \n Placa: ABC123"];
+        n0 -> n1;
+        n1 -> n0;
+        n1 -> n2;
+        n2 -> n1;
+        n2 -> n3;
+        n3 -> n2;
+        n3 -> n4;
+        n4 -> n3;
+    }
+}

@@ -1,0 +1,45 @@
+[
+    {
+    "ID": 1,
+    "ID_Usuario": 1,
+    "Marca": "Toyota",
+    "Modelo": 2000,
+    "Placa": "ABC123"
+    },
+    {
+    "ID": 2,
+    "ID_Usuario": 2,
+    "Marca": "Ford",
+    "Modelo": 2001,
+    "Placa": "XYZ456"
+    },
+    {
+        "ID": 3,
+        "ID_Usuario": 1,
+        "Marca": "Toyota",
+        "Modelo": 2002,
+        "Placa": "ABC123"
+        },
+        {
+        "ID": 4,
+        "ID_Usuario": 2,
+        "Marca": "Ford",
+        "Modelo": 2003,
+        "Placa": "XYZ456"
+        },
+        {
+            "ID": 5,
+            "ID_Usuario": 1,
+            "Marca": "Toyota",
+            "Modelo": 2004,
+            "Placa": "ABC123"
+            },
+            {
+            "ID": 6,
+            "ID_Usuario": 2,
+            "Marca": "Ford",
+            "Modelo": 2005,
+            "Placa": "XYZ456"
+            }
+    ]
+    
