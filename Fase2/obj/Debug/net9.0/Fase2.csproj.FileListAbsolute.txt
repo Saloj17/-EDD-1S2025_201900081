@@ -1,0 +1,15 @@
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\obj\Debug\net9.0\Fase2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\obj\Debug\net9.0\Fase2.AssemblyInfoInputs.cache
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\obj\Debug\net9.0\Fase2.AssemblyInfo.cs
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\obj\Debug\net9.0\Fase2.csproj.CoreCompileInputs.cache
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\obj\Debug\net9.0\Fase2.sourcelink.json
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\bin\Debug\net9.0\Fase2.exe
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\bin\Debug\net9.0\Fase2.deps.json
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\bin\Debug\net9.0\Fase2.runtimeconfig.json
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\bin\Debug\net9.0\Fase2.dll
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\bin\Debug\net9.0\Fase2.pdb
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\obj\Debug\net9.0\Fase2.dll
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\obj\Debug\net9.0\refint\Fase2.dll
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\obj\Debug\net9.0\Fase2.pdb
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\obj\Debug\net9.0\Fase2.genruntimeconfig.cache
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\obj\Debug\net9.0\ref\Fase2.dll

@@ -1,0 +1,15 @@
+digraph G {
+label = "Lista Servicios";
+
+labelloc = "t";
+fontsize = 24;\n\n
+ 10 [label="Id: 10 \n Repuesto: 101  |  Vehículo: 2001 \n Detalles: Cambio de aceite \n Costo: 50"];
+  10 -> 5;
+ 5 [label="Id: 5 \n Repuesto: 102  |  Vehículo: 2002 \n Detalles: Cambio de frenos \n Costo: 200"];
+  5 -> 3;
+ 3 [label="Id: 3 \n Repuesto: 104  |  Vehículo: 2004 \n Detalles: Revisión general \n Costo: 30"];
+  5 -> 8;
+ 8 [label="Id: 8 \n Repuesto: 105  |  Vehículo: 2005 \n Detalles: Cambio de filtro \n Costo: 25"];
+  10 -> 15;
+ 15 [label="Id: 15 \n Repuesto: 103  |  Vehículo: 2003 \n Detalles: Reemplazo de batería \n Costo: 150"];
+}

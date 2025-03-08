@@ -1,0 +1,29 @@
+digraph G {
+    node [shape=ellipse];
+    rankdir=LR;
+    subgraph cluster_0 {
+        label = "Lista Vehiculos";
+n0 [label = "ID: 1 \n ID Usuario: 1 \n Marca: Toyota \n Modelo: 2020 \n Placa: ABC123"];
+n1 [label = "ID: 2 \n ID Usuario: 1 \n Marca: Nissan \n Modelo: 2019 \n Placa: DEF456"];
+n2 [label = "ID: 3 \n ID Usuario: 2 \n Marca: Chevrolet \n Modelo: 2018 \n Placa: GHI789"];
+n3 [label = "ID: 4 \n ID Usuario: 3 \n Marca: Ford \n Modelo: 2017 \n Placa: JKL012"];
+n4 [label = "ID: 5 \n ID Usuario: 3 \n Marca: Mazda \n Modelo: 2016 \n Placa: MNO345"];
+n5 [label = "ID: 6 \n ID Usuario: 3 \n Marca: Honda \n Modelo: 2015 \n Placa: PQR678"];
+n6 [label = "ID: 7 \n ID Usuario: 3 \n Marca: Kia \n Modelo: 2014 \n Placa: STU901"];
+n7 [label = "ID: 8 \n ID Usuario: 3 \n Marca: Hyundai \n Modelo: 2013 \n Placa: VWX234"];
+        n0 -> n1;
+        n1 -> n0;
+        n1 -> n2;
+        n2 -> n1;
+        n2 -> n3;
+        n3 -> n2;
+        n3 -> n4;
+        n4 -> n3;
+        n4 -> n5;
+        n5 -> n4;
+        n5 -> n6;
+        n6 -> n5;
+        n6 -> n7;
+        n7 -> n6;
+    }
+}
