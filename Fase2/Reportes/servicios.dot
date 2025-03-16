@@ -1,8 +1,8 @@
 digraph G {
-label = "Lista Servicios";
+label = "Arbol Servicios";
 
 labelloc = "t";
-fontsize = 24;\n\n
+fontsize = 24;
  10 [label="Id: 10 \n Repuesto: 101  |  Vehículo: 2001 \n Detalles: Cambio de aceite \n Costo: 50"];
   10 -> 5;
  5 [label="Id: 5 \n Repuesto: 102  |  Vehículo: 2002 \n Detalles: Cambio de frenos \n Costo: 200"];
@@ -12,4 +12,8 @@ fontsize = 24;\n\n
  8 [label="Id: 8 \n Repuesto: 105  |  Vehículo: 2005 \n Detalles: Cambio de filtro \n Costo: 25"];
   10 -> 15;
  15 [label="Id: 15 \n Repuesto: 103  |  Vehículo: 2003 \n Detalles: Reemplazo de batería \n Costo: 150"];
+  15 -> 20;
+ 20 [label="Id: 20 \n Repuesto: 12  |  Vehículo: 2006 \n Detalles: Cambio de aceite \n Costo: 50"];
+  20 -> 25;
+ 25 [label="Id: 25 \n Repuesto: 13  |  Vehículo: 2007 \n Detalles: Cambio de aceite \n Costo: 50"];
 }

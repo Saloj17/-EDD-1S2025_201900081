@@ -1,0 +1,19 @@
+digraph G {
+label = "AVL Repuestos";
+
+labelloc = "t";
+fontsize = 24;
+ 10 [label="Id: 10 \n Repuesto: Aceite \n Detalles: Aceite sintético \n Costo: 50"];
+  10 -> 5;
+ 5 [label="Id: 5 \n Repuesto: Frenos \n Detalles: Pastillas de freno \n Costo: 200"];
+  5 -> 3;
+ 3 [label="Id: 3 \n Repuesto: Filtro \n Detalles: Filtro de aire \n Costo: 25"];
+  5 -> 8;
+ 8 [label="Id: 8 \n Repuesto: Llantas \n Detalles: Llantas de 16 pulgadas \n Costo: 100"];
+  10 -> 20;
+ 20 [label="Id: 20 \n Repuesto: Llantas \n Detalles: Llantas de 17 pulgadas \n Costo: 120"];
+  20 -> 15;
+ 15 [label="Id: 15 \n Repuesto: Batería \n Detalles: Batería de 12V \n Costo: 150"];
+  20 -> 25;
+ 25 [label="Id: 25 \n Repuesto: Llantas \n Detalles: Llantas de 18 pulgadas \n Costo: 140"];
+}

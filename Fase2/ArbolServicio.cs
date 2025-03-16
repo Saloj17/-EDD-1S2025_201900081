@@ -138,9 +138,9 @@ public class ArbolBinarioServicio
     {
         StringBuilder sb = new StringBuilder();
         sb.AppendLine("digraph G {");
-        sb.AppendLine("label = \"Lista Servicios\";\n");
+        sb.AppendLine("label = \"Arbol Servicios\";\n");
         sb.AppendLine("labelloc = \"t\";");
-        sb.AppendLine("fontsize = 24;\\n\\n");
+        sb.AppendLine("fontsize = 24;");
         GenerarCodigoDotRec(Raiz, sb);
         sb.AppendLine("}");
         return sb.ToString();
