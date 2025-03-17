@@ -6,8 +6,8 @@ public class NodoRepuesto
     public string Detalle{ get; set; }
     public double Costo{ get; set; }
     public int Altura{ get; set; }
-    public NodoRepuesto? Drcha{ get; set; }
-    public NodoRepuesto? Izq{ get; set; }
+    public NodoRepuesto? Derecha{ get; set; }
+    public NodoRepuesto? Izquierda{ get; set; }
 
     // Constructor
     public NodoRepuesto(int id, string repuesto, string detalle, double costo)
@@ -17,7 +17,7 @@ public class NodoRepuesto
         Detalle = detalle;
         Costo = costo;
         Altura = 1;
-        Drcha = null;
-        Izq = null;
+        Derecha = null;
+        Izquierda = null;
     }
 }

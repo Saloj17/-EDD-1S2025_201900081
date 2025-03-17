@@ -138,9 +138,10 @@ public class ArbolBinarioServicio
     {
         StringBuilder sb = new StringBuilder();
         sb.AppendLine("digraph G {");
-        sb.AppendLine("label = \"Arbol Servicios\";\n");
+        sb.AppendLine("label = \"Arbol Servicios\n\n\";\n");
         sb.AppendLine("labelloc = \"t\";");
         sb.AppendLine("fontsize = 24;");
+        sb.AppendLine("fontname = \"Helvetica-Bold\";");
         GenerarCodigoDotRec(Raiz, sb);
         sb.AppendLine("}");
         return sb.ToString();
@@ -151,7 +152,7 @@ public class ArbolBinarioServicio
         {
             // Crear un nodo para el nodo actual
             //Mostrar todos los datos del nodo
-            sb.AppendLine($" {raiz.Id} [label=\"Id: {raiz.Id} \\n Repuesto: {raiz.Id_Repuesto}  |  Vehículo: {raiz.Id_Vehiculo} \\n Detalles: {raiz.Detalles} \\n Costo: {raiz.Costo}\"];");
+            sb.AppendLine($" {raiz.Id} [label=\"Id: {raiz.Id} \\n Repuesto: {raiz.Id_Repuesto}  |  Vehículo: {raiz.Id_Vehiculo} \\n Detalles: {raiz.Detalles} \\n Costo: {raiz.Costo}\" style=\"filled\" fillcolor=\"#96cbb0\" fontname=\"Helvetica-Bold\" fontsize = 18 ];");
 
             // Si hay subárbol izquierdo, crear una conexión
             if (raiz.Izquierda != null)

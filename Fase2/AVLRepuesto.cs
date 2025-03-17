@@ -52,22 +52,22 @@ public class AVLRepuesto
         }
         else if (nodo.Id < raiz.Id)
         {
-            raiz.Izq = Insert(raiz.Izq, nodo);
+            raiz.Izquierda = Insert(raiz.Izquierda, nodo);
         }
         else if (nodo.Id > raiz.Id)
         {
-            raiz.Drcha = Insert(raiz.Drcha, nodo);
+            raiz.Derecha = Insert(raiz.Derecha, nodo);
         }
 
-        raiz.Altura = AlturaMaxima(ObtenerAltura(raiz.Izq), ObtenerAltura(raiz.Drcha)) + 1;
+        raiz.Altura = AlturaMaxima(ObtenerAltura(raiz.Izquierda), ObtenerAltura(raiz.Derecha)) + 1;
 
         int balance = ObtenerBalance(raiz);
 
         if (balance > 1)
         {
-            if (ObtenerBalance(raiz.Drcha) < 0)
+            if (ObtenerBalance(raiz.Derecha) < 0)
             {
-                raiz.Drcha = RotacionDerecha(raiz.Drcha);
+                raiz.Derecha = RotacionDerecha(raiz.Derecha);
                 raiz = RotacionIzquierda(raiz);
             }
             else
@@ -78,9 +78,9 @@ public class AVLRepuesto
 
         if (balance < -1)
         {
-            if (ObtenerBalance(raiz.Izq) > 0)
+            if (ObtenerBalance(raiz.Izquierda) > 0)
             {
-                raiz.Izq = RotacionIzquierda(raiz.Izq);
+                raiz.Izquierda = RotacionIzquierda(raiz.Izquierda);
                 raiz = RotacionDerecha(raiz);
             }
             else
@@ -94,28 +94,28 @@ public class AVLRepuesto
 
     public NodoRepuesto RotacionIzquierda(NodoRepuesto raiz)
     {
-        NodoRepuesto? raizDerecha = raiz.Drcha;
-        NodoRepuesto? temp = raizDerecha.Izq;
+        NodoRepuesto? raizDerecha = raiz.Derecha;
+        NodoRepuesto? temp = raizDerecha.Izquierda;
 
-        raizDerecha.Izq = raiz;
-        raiz.Drcha = temp;
+        raizDerecha.Izquierda = raiz;
+        raiz.Derecha = temp;
 
-        raiz.Altura = AlturaMaxima(ObtenerAltura(raiz.Izq), ObtenerAltura(raiz.Drcha)) + 1;
-        raizDerecha.Altura = AlturaMaxima(ObtenerAltura(raizDerecha.Izq), ObtenerAltura(raizDerecha.Drcha)) + 1;
+        raiz.Altura = AlturaMaxima(ObtenerAltura(raiz.Izquierda), ObtenerAltura(raiz.Derecha)) + 1;
+        raizDerecha.Altura = AlturaMaxima(ObtenerAltura(raizDerecha.Izquierda), ObtenerAltura(raizDerecha.Derecha)) + 1;
 
         return raizDerecha;
     }
 
     public NodoRepuesto RotacionDerecha(NodoRepuesto raiz)
     {
-        NodoRepuesto? raizIzquierda = raiz.Izq;
-        NodoRepuesto? temp = raizIzquierda.Drcha;
+        NodoRepuesto? raizIzquierda = raiz.Izquierda;
+        NodoRepuesto? temp = raizIzquierda.Derecha;
 
-        raizIzquierda.Drcha = raiz;
-        raiz.Izq = temp;
+        raizIzquierda.Derecha = raiz;
+        raiz.Izquierda = temp;
 
-        raiz.Altura = AlturaMaxima(ObtenerAltura(raiz.Izq), ObtenerAltura(raiz.Drcha)) + 1;
-        raizIzquierda.Altura = AlturaMaxima(ObtenerAltura(raizIzquierda.Izq), ObtenerAltura(raizIzquierda.Drcha)) + 1;
+        raiz.Altura = AlturaMaxima(ObtenerAltura(raiz.Izquierda), ObtenerAltura(raiz.Derecha)) + 1;
+        raizIzquierda.Altura = AlturaMaxima(ObtenerAltura(raizIzquierda.Izquierda), ObtenerAltura(raizIzquierda.Derecha)) + 1;
 
         return raizIzquierda;
     }
@@ -133,7 +133,7 @@ public class AVLRepuesto
 
     public int ObtenerBalance(NodoRepuesto raiz)
     {
-        return ObtenerAltura(raiz.Drcha) - ObtenerAltura(raiz.Izq);
+        return ObtenerAltura(raiz.Derecha) - ObtenerAltura(raiz.Izquierda);
     }
 
     public void PreOrden(NodoRepuesto? raiz)
@@ -141,8 +141,8 @@ public class AVLRepuesto
         if (raiz != null)
         {
             Console.WriteLine($"ID: {raiz.Id}, Repuesto: {raiz.Repuesto}, Detalle: {raiz.Detalle}, Costo: {raiz.Costo}");
-            PreOrden(raiz.Izq);
-            PreOrden(raiz.Drcha);
+            PreOrden(raiz.Izquierda);
+            PreOrden(raiz.Derecha);
         }
     }
 
@@ -150,9 +150,9 @@ public class AVLRepuesto
     {
         if (raiz != null)
         {
-            InOrden(raiz.Izq);
+            InOrden(raiz.Izquierda);
             Console.WriteLine($"ID: {raiz.Id}, Repuesto: {raiz.Repuesto}, Detalle: {raiz.Detalle}, Costo: {raiz.Costo}");
-            InOrden(raiz.Drcha);
+            InOrden(raiz.Derecha);
         }
     }
 
@@ -160,8 +160,8 @@ public class AVLRepuesto
     {
         if (raiz != null)
         {
-            PostOrden(raiz.Izq, accion);
-            PostOrden(raiz.Drcha, accion);
+            PostOrden(raiz.Izquierda, accion);
+            PostOrden(raiz.Derecha, accion);
             if (!accion)
             {
                 Console.WriteLine($"ID: {raiz.Id}, Repuesto: {raiz.Repuesto}, Detalle: {raiz.Detalle}, Costo: {raiz.Costo}");
@@ -214,9 +214,10 @@ public class AVLRepuesto
     {
         StringBuilder sb = new StringBuilder();
         sb.AppendLine("digraph G {");
-        sb.AppendLine("label = \"AVL Repuestos\";\n");
+        sb.AppendLine("label = \"AVL Repuestos\n\n\";\n");
         sb.AppendLine("labelloc = \"t\";");
         sb.AppendLine("fontsize = 24;");
+        sb.AppendLine("fontname = \"Helvetica-Bold\";");
         GenerarCodigoDotRec(raiz, sb);
         sb.AppendLine("}");
         return sb.ToString();
@@ -227,20 +228,20 @@ public class AVLRepuesto
         {
             // Crear un nodo para el nodo actual
             //Mostrar todos los datos del nodo
-            sb.AppendLine($" {raiz.Id} [label=\"Id: {raiz.Id} \\n Repuesto: {raiz.Repuesto} \\n Detalles: {raiz.Detalle} \\n Costo: {raiz.Costo}\"];");
+            sb.AppendLine($" {raiz.Id} [label=\"Id: {raiz.Id} \\n Repuesto: {raiz.Repuesto} \\n Detalles: {raiz.Detalle} \\n Costo: {raiz.Costo}\"        style=\"filled\" fillcolor=\"#96cbb0\" fontname=\"Helvetica-Bold\" fontsize = 18];");
 
             // Si hay subárbol izquierdo, crear una conexión
-            if (raiz.Izq != null)
+            if (raiz.Izquierda != null)
             {
-                sb.AppendLine($"  {raiz.Id} -> {raiz.Izq.Id};");
-                GenerarCodigoDotRec(raiz.Izq, sb);
+                sb.AppendLine($"  {raiz.Id} -> {raiz.Izquierda.Id};");
+                GenerarCodigoDotRec(raiz.Izquierda, sb);
             }
 
             // Si hay subárbol derecho, crear una conexión
-            if (raiz.Drcha != null)
+            if (raiz.Derecha != null)
             {
-                sb.AppendLine($"  {raiz.Id} -> {raiz.Drcha.Id};");
-                GenerarCodigoDotRec(raiz.Drcha, sb);
+                sb.AppendLine($"  {raiz.Id} -> {raiz.Derecha.Id};");
+                GenerarCodigoDotRec(raiz.Derecha, sb);
             }
         }
     }

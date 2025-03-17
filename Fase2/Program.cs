@@ -9,6 +9,7 @@ class Program
         ListaVehiculos listaVehiculos = new ListaVehiculos();
         ArbolBinarioServicio arbol = new ArbolBinarioServicio(); 
         AVLRepuesto arbolRepuesto = new AVLRepuesto();
+        ArbolBFactura arbolB = new ArbolBFactura(); 
 
         // Agregar usuarios
         lista.AgregarUsuario(1, "Juan", "Pérez","juan@gmail.com", 25, "1234");
@@ -16,7 +17,7 @@ class Program
         lista.AgregarUsuario(3, "Pedro", "Gómez", "pedro@gmail.com", 35, "abcd");
 
         // lista.Mostrar();
-        // lista.GenerarGraphviz();
+        lista.GenerarGraphviz();
 
         // Crear la lista de vehículos
         listaVehiculos.AgregarVehiculoFinal(1, 1, "Toyota", 2020, "ABC123");
@@ -29,7 +30,7 @@ class Program
         listaVehiculos.AgregarVehiculoFinal(8, 3, "Hyundai", 2013, "VWX234");
 
         // listaVehiculos.Mostrar();
-        // listaVehiculos.GenerarGraphviz();
+        listaVehiculos.GenerarGraphviz();
 
         NodoServicio servicio1 = new NodoServicio(10, 101, 2001, "Cambio de aceite", 50.0);
         NodoServicio servicio2 = new NodoServicio(5, 102, 2002, "Cambio de frenos", 200.0);
@@ -83,6 +84,38 @@ class Program
 
         // Imprimir los recorridos
         arbolRepuesto.GenerarGraphviz();
+
+        // Insertar facturas
+        arbolB.Insertar(1, 101, 50.0);
+        arbolB.Insertar(2, 102, 200.0);
+        arbolB.Insertar(3, 103, 150.0);
+        arbolB.Insertar(4, 104, 30.0);
+        arbolB.Insertar(5, 105, 25.0);
+        arbolB.Insertar(6, 12, 50.0);
+        arbolB.Insertar(7, 13, 50.0);
+        arbolB.Insertar(8, 14, 50.0);
+        arbolB.Insertar(9, 101, 50.0);
+        arbolB.Insertar(10, 102, 200.0);
+        arbolB.Insertar(11, 103, 150.0);
+        arbolB.Insertar(12, 104, 30.0);
+        arbolB.Insertar(13, 105, 25.0);
+        arbolB.Insertar(14, 12, 50.0);
+        arbolB.Insertar(15, 13, 50.0);
+        arbolB.Insertar(16, 14, 50.0);
+        arbolB.Insertar(17, 101, 50.0);
+        arbolB.Insertar(18, 102, 200.0);
+        arbolB.Insertar(19, 103, 150.0);
+        arbolB.Insertar(20, 104, 30.0);
+        arbolB.Insertar(21, 105, 25.0);
+        arbolB.Insertar(22, 12, 50.0);
+        arbolB.Insertar(23, 13, 50.0);
+        arbolB.Insertar(24, 14, 50.0);
+        arbolB.Insertar(25, 101, 50.0);
+        arbolB.Insertar(26, 102, 200.0);
+
+        // arbolB.GenerarGraphviz();
+        // arbolB.MostrarPorNiveles();
+        arbolB.GenerarGraphviz();
 
 
 

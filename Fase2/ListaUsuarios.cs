@@ -70,6 +70,9 @@ public class ListaUsuarios
         graphviz += "    rankdir=LR;\n";
         graphviz += "    subgraph cluster_0 {\n";
         graphviz += "        label = \"Lista Usuarios\";\n";
+        graphviz += "        lalbelloc = \"t\";\n";
+        graphviz += "        fontsize = 24;\n";
+        graphviz += "        fontname = \"Helvetica-Bold\";\n";
 
         // Iterar sobre los nodos de la lista y construir la representación Graphviz
         NodoUsuario? actual = primero;
@@ -81,7 +84,7 @@ public class ListaUsuarios
 
         while (actual != null)
         {
-            graphviz += $"        n{index} [label = \"ID: {actual.Id} \\n Nombre: {actual.Nombre} \\n Apellido: {actual.Apellido} \\n Correo: {actual.Correo} \\n Edad: {actual.Edad} \\n Contrasenia: {actual.Contrasenia} \"];\n";
+            graphviz += $"        n{index} [label = \"ID: {actual.Id} \\n Nombre: {actual.Nombre} \\n Apellido: {actual.Apellido} \\n Correo: {actual.Correo} \\n Edad: {actual.Edad} \\n Contrasenia: {actual.Contrasenia} \"  style=\"filled\" fillcolor=\"#96cbb0\" fontname=\"Helvetica-Bold\" fontsize = 18];\n";
             actual = actual.Siguiente;
             index++;
         }

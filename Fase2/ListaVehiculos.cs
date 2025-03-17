@@ -133,6 +133,9 @@ public class ListaVehiculos
             graphviz += "    rankdir=LR;\n";
             graphviz += "    subgraph cluster_0 {\n";
             graphviz += "        label = \"Lista Vehiculos\";\n";
+            graphviz += "        lalbelloc = \"t\";\n";
+            graphviz += "        fontsize = 24;\n";
+            graphviz += "        fontname = \"Helvetica-Bold\";\n";
 
             // Iterar sobre los nodos de la lista y construir la representación Graphviz
             NodoVehiculo? actual = primero;
@@ -140,7 +143,7 @@ public class ListaVehiculos
 
             while (actual != null)
             {
-                graphviz += $"n{index} [label = \"ID: {actual.Id} \\n ID Usuario: {actual.Id_Usuario} \\n Marca: {actual.Marca} \\n Modelo: {actual.Modelo} \\n Placa: {actual.Placa}\"];\n";
+                graphviz += $"n{index} [label = \"ID: {actual.Id} \\n ID Usuario: {actual.Id_Usuario} \\n Marca: {actual.Marca} \\n Modelo: {actual.Modelo} \\n Placa: {actual.Placa}\"style=\"filled\" fillcolor=\"#96cbb0\" fontname=\"Helvetica-Bold\" fontsize = 18];\n";
 
                 actual = actual.Siguiente;
                 index++;

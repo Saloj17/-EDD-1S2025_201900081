@@ -1,19 +1,24 @@
 digraph G {
-label = "AVL Repuestos";
+label = "AVL Repuestos
+
+";
 
 labelloc = "t";
 fontsize = 24;
- 10 [label="Id: 10 \n Repuesto: Aceite \n Detalles: Aceite sintético \n Costo: 50"];
+fontname = "Helvetica-Bold";
+ 10 [label="Id: 10 \n Repuesto: Aceite \n Detalles: Aceite sintético \n Costo: 50"        style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
   10 -> 5;
- 5 [label="Id: 5 \n Repuesto: Frenos \n Detalles: Pastillas de freno \n Costo: 200"];
+ 5 [label="Id: 5 \n Repuesto: Frenos \n Detalles: Pastillas de freno \n Costo: 200"        style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
   5 -> 3;
- 3 [label="Id: 3 \n Repuesto: Filtro \n Detalles: Filtro de aire \n Costo: 25"];
+ 3 [label="Id: 3 \n Repuesto: Filtro \n Detalles: Filtro de aire \n Costo: 25"        style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
   5 -> 8;
- 8 [label="Id: 8 \n Repuesto: Llantas \n Detalles: Llantas de 16 pulgadas \n Costo: 100"];
+ 8 [label="Id: 8 \n Repuesto: Llantas \n Detalles: Llantas de 16 pulgadas \n Costo: 100"        style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
   10 -> 20;
- 20 [label="Id: 20 \n Repuesto: Llantas \n Detalles: Llantas de 17 pulgadas \n Costo: 120"];
+ 20 [label="Id: 20 \n Repuesto: Llantas \n Detalles: Llantas de 17 pulgadas \n Costo: 120"        style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
   20 -> 15;
- 15 [label="Id: 15 \n Repuesto: Batería \n Detalles: Batería de 12V \n Costo: 150"];
+ 15 [label="Id: 15 \n Repuesto: Batería \n Detalles: Batería de 12V \n Costo: 150"        style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
   20 -> 25;
- 25 [label="Id: 25 \n Repuesto: Llantas \n Detalles: Llantas de 18 pulgadas \n Costo: 140"];
+ 25 [label="Id: 25 \n Repuesto: Llantas \n Detalles: Llantas de 18 pulgadas \n Costo: 140"        style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+  25 -> 30;
+ 30 [label="Id: 30 \n Repuesto: Llantas \n Detalles: Llantas de 19 pulgadas \n Costo: 160"        style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
 }
