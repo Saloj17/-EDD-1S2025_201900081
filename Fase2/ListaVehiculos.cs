@@ -1,125 +1,127 @@
 using System;
 using System.Diagnostics;
-public class ListaVehiculos
+namespace Estructuras
 {
-    // Atributo que guarda el primer nodo de la lista
-    private NodoVehiculo? primero;
-    private NodoVehiculo? ultimo;
-
-    // Constructor de la lista de usuarios
-    public ListaVehiculos()
+    public class ListaVehiculos
     {
-        primero = null;
-        ultimo = null;
-    }
+        // Atributo que guarda el primer nodo de la lista
+        private NodoVehiculo? primero;
+        private NodoVehiculo? ultimo;
 
-    // Método para agregar un nuevo nodo al final de la lista
-    public void AgregarVehiculoFinal(int id, int id_usuario, string marca, int modelo, string placa)
-    {
-        NodoVehiculo nuevo = new NodoVehiculo(id, id_usuario, marca, modelo, placa);
-        if (primero == null && ultimo == null)
+        // Constructor de la lista de usuarios
+        public ListaVehiculos()
         {
-            primero = nuevo;
-            ultimo = nuevo;
+            primero = null;
+            ultimo = null;
         }
-        else
-        {
-            ultimo.Siguiente = nuevo;
-            nuevo.Anterior = ultimo;
-            ultimo = nuevo;
-        }
-    }
 
-    public void AgregarVehiculoInicio(int id, int id_usuario, string marca, int modelo, string placa)
-    {
-        NodoVehiculo nuevo = new NodoVehiculo(id, id_usuario, marca, modelo, placa);
-        if (primero == null && ultimo == null)
+        // Método para agregar un nuevo nodo al final de la lista
+        public void AgregarVehiculoFinal(int id, int id_usuario, string marca, int modelo, string placa)
         {
-            primero = nuevo;
-            ultimo = nuevo;
-        }
-        else
-        {
-            nuevo.Siguiente = primero;
-            primero.Anterior = nuevo;
-            primero = nuevo;
-        }
-    }
-
-    // Método mostrar
-    public void Mostrar()
-    {
-        NodoVehiculo? actual = primero;
-        while (actual != null)
-        {
-            Console.WriteLine("ID: " + actual.Id);
-            Console.WriteLine("ID Usuario: " + actual.Id_Usuario);
-            Console.WriteLine("Marca: " + actual.Marca);
-            Console.WriteLine("Modelo: " + actual.Modelo);
-            Console.WriteLine("Placa: " + actual.Placa);
-            Console.WriteLine();
-            actual = actual.Siguiente;
-        }
-    }
-
-    //Metodo buscar nodo por id
-    public NodoVehiculo? BuscarVehiculoId(int id)
-    {
-        NodoVehiculo? actual = primero;
-        while (actual != null)
-        {
-            if (actual.Id == id)
+            NodoVehiculo nuevo = new NodoVehiculo(id, id_usuario, marca, modelo, placa);
+            if (primero == null && ultimo == null)
             {
-                return actual;
+                primero = nuevo;
+                ultimo = nuevo;
             }
-            actual = actual.Siguiente;
-        }
-        return null;
-    }
-
-    // Metodo booleano para buscar un nodo por id
-    public bool ExisteVehiculoId(int id)
-    {
-        NodoVehiculo? actual = primero;
-        while (actual != null)
-        {
-            if (actual.Id == id)
+            else
             {
-                return true;
+                ultimo.Siguiente = nuevo;
+                nuevo.Anterior = ultimo;
+                ultimo = nuevo;
             }
-            actual = actual.Siguiente;
-        }
-        return false;
-    }
-
-    // Metodo para eliminar un nodo por id  
-    public void EliminarVehiculoId(int id)
-    {
-        if (primero == null)
-        {
-            return;
         }
 
-        if (primero.Id == id)
+        public void AgregarVehiculoInicio(int id, int id_usuario, string marca, int modelo, string placa)
         {
-            primero = primero.Siguiente;
-            return;
-        }
-
-        NodoVehiculo? actual = primero;
-        while (actual.Siguiente != null)
-        {
-            if (actual.Siguiente.Id == id)
+            NodoVehiculo nuevo = new NodoVehiculo(id, id_usuario, marca, modelo, placa);
+            if (primero == null && ultimo == null)
             {
-                actual.Siguiente = actual.Siguiente.Siguiente;
+                primero = nuevo;
+                ultimo = nuevo;
+            }
+            else
+            {
+                nuevo.Siguiente = primero;
+                primero.Anterior = nuevo;
+                primero = nuevo;
+            }
+        }
+
+        // Método mostrar
+        public void Mostrar()
+        {
+            NodoVehiculo? actual = primero;
+            while (actual != null)
+            {
+                Console.WriteLine("ID: " + actual.Id);
+                Console.WriteLine("ID Usuario: " + actual.Id_Usuario);
+                Console.WriteLine("Marca: " + actual.Marca);
+                Console.WriteLine("Modelo: " + actual.Modelo);
+                Console.WriteLine("Placa: " + actual.Placa);
+                Console.WriteLine();
+                actual = actual.Siguiente;
+            }
+        }
+
+        //Metodo buscar nodo por id
+        public NodoVehiculo? BuscarVehiculoId(int id)
+        {
+            NodoVehiculo? actual = primero;
+            while (actual != null)
+            {
+                if (actual.Id == id)
+                {
+                    return actual;
+                }
+                actual = actual.Siguiente;
+            }
+            return null;
+        }
+
+        // Metodo booleano para buscar un nodo por id
+        public bool ExisteVehiculoId(int id)
+        {
+            NodoVehiculo? actual = primero;
+            while (actual != null)
+            {
+                if (actual.Id == id)
+                {
+                    return true;
+                }
+                actual = actual.Siguiente;
+            }
+            return false;
+        }
+
+        // Metodo para eliminar un nodo por id  
+        public void EliminarVehiculoId(int id)
+        {
+            if (primero == null)
+            {
                 return;
             }
-            actual = actual.Siguiente;
-        }
-    }
 
-    
-    public void GenerarGraphviz()
+            if (primero.Id == id)
+            {
+                primero = primero.Siguiente;
+                return;
+            }
+
+            NodoVehiculo? actual = primero;
+            while (actual.Siguiente != null)
+            {
+                if (actual.Siguiente.Id == id)
+                {
+                    actual.Siguiente = actual.Siguiente.Siguiente;
+                    return;
+                }
+                actual = actual.Siguiente;
+            }
+        }
+
+
+        public void GenerarGraphviz()
         {
             // Si la lista está vacía, generamos un solo nodo con "NULL"
             if (primero == null)
@@ -154,7 +156,7 @@ public class ListaVehiculos
             for (int i = 0; actual != null && actual.Siguiente != null; i++)
             {
                 graphviz += $"        n{i} -> n{i + 1};\n";
-                graphviz += $"        n{i+1} -> n{i};\n";
+                graphviz += $"        n{i + 1} -> n{i};\n";
                 actual = actual.Siguiente;
             }
 
@@ -193,6 +195,6 @@ public class ListaVehiculos
 
 
 
-
+    }
 
 }

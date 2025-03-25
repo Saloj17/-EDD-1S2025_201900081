@@ -13,3 +13,12 @@ C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\obj\Debug\net9.0\ref
 C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\obj\Debug\net9.0\Fase2.pdb
 C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\obj\Debug\net9.0\Fase2.genruntimeconfig.cache
 C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\obj\Debug\net9.0\ref\Fase2.dll
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\bin\Debug\net9.0\AtkSharp.dll
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\bin\Debug\net9.0\CairoSharp.dll
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\bin\Debug\net9.0\GdkSharp.dll
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\bin\Debug\net9.0\GioSharp.dll
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\bin\Debug\net9.0\GLibSharp.dll
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\bin\Debug\net9.0\GtkSharp.dll
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\bin\Debug\net9.0\PangoSharp.dll
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\obj\Debug\net9.0\Fase2.csproj.AssemblyReference.cache
+C:\Users\SALOJ\Desktop\[EDD-25]\-EDD-1S2025_201900081\Fase2\obj\Debug\net9.0\Fase2.csproj.Up2Date
