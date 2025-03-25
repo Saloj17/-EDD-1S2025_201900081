@@ -14,6 +14,18 @@ namespace Estructuras
             primero = null;
         }
 
+        // Método para vaciar la lista
+        public void Vaciar()
+        {
+            NodoUsuario? actual = primero;
+            while (actual != null)
+            {
+                NodoUsuario? temp = actual;
+                actual = actual.Siguiente;
+                temp.Siguiente = null;
+            }
+            primero = null;
+        }
         // Método para agregar un nuevo nodo al final de la lista
         public void AgregarUsuario(int id, string nombre, string apellido, string correo, int edad, string contrasenia)
         {

@@ -79,6 +79,16 @@ namespace Estructuras
             return null;
         }
 
+        public void Vaciar()
+        {
+            NodoVehiculo? actual = primero;
+            while (actual != null)
+            {
+                EliminarVehiculoId(actual.Id);
+                actual = actual.Siguiente;
+            }
+        }
+
         // Metodo booleano para buscar un nodo por id
         public bool ExisteVehiculoId(int id)
         {

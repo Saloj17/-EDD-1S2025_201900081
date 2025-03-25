@@ -248,5 +248,69 @@ namespace Estructuras
             }
         }
 
+        public bool ExisteNodoPorId(int id)
+        {
+            return ExisteNodoPorId(raiz, id);
+        }
+
+        private bool ExisteNodoPorId(NodoRepuesto? raiz, int id)
+        {
+            // Si la raíz es nula, el nodo no fue encontrado
+            if (raiz == null)
+            {
+                return false;
+            }
+
+            // Si el ID es igual al ID del nodo actual, devolver true
+            if (id == raiz.Id)
+            {
+                return true;
+            }
+
+            // Si el ID es menor que el ID del nodo actual, buscar en el subárbol izquierdo
+            if (id < raiz.Id)
+            {
+                return ExisteNodoPorId(raiz.Izquierda, id);
+            }
+            // Si el ID es mayor que el ID del nodo actual, buscar en el subárbol derecho
+            else
+            {
+                return ExisteNodoPorId(raiz.Derecha, id);
+            }
+        }
+
+        public NodoRepuesto? BuscarPorId(int id)
+        {
+            return BuscarPorId(raiz, id);
+        }
+
+        private NodoRepuesto? BuscarPorId(NodoRepuesto? raiz, int id)
+        {
+            // Si la raíz es nula, el nodo no fue encontrado
+            if (raiz == null)
+            {
+                return null;
+            }
+
+            // Si el ID es igual al ID del nodo actual, devolver el nodo
+            if (id == raiz.Id)
+            {
+                return raiz;
+            }
+
+            // Si el ID es menor que el ID del nodo actual, buscar en el subárbol izquierdo
+            if (id < raiz.Id)
+            {
+                return BuscarPorId(raiz.Izquierda, id);
+            }
+            // Si el ID es mayor que el ID del nodo actual, buscar en el subárbol derecho
+            else
+            {
+                return BuscarPorId(raiz.Derecha, id);
+            }
+        }
+
     }
+
+
 }

@@ -1,14 +1,116 @@
 [
     {
-    "ID": 1,
-    "Repuesto": "Filtro de aceite",
-    "Detalles": "Filtro de aceite para motor 1.8L",
-    "Costo": 15.75
+        "ID": 1,
+        "Repuesto": "Filtro de aceite",
+        "Detalles": "Filtro de aceite para motor 1.8L",
+        "Costo": 15.75
     },
     {
-    "ID": 1,
-    "Repuesto": "Bujías",
-    "Detalles": "Juego de bujías para motor 2.0L",
-    "Costo": 30.50
+        "ID": 2,
+        "Repuesto": "Bujías",
+        "Detalles": "Juego de bujías para motor 2.0L",
+        "Costo": 30.50
+    },
+    {
+        "ID": 3,
+        "Repuesto": "Pastillas de freno",
+        "Detalles": "Juego de pastillas de freno para automóvil",
+        "Costo": 45.00
+    },
+    {
+        "ID": 4,
+        "Repuesto": "Amortiguadores",
+        "Detalles": "Amortiguadores delanteros para SUV",
+        "Costo": 80.75
+    },
+    {
+        "ID": 5,
+        "Repuesto": "Correa de distribución",
+        "Detalles": "Correa de distribución para motor 1.6L",
+        "Costo": 60.00
+    },
+    {
+        "ID": 6,
+        "Repuesto": "Aceite de motor",
+        "Detalles": "Aceite sintético 5W-30 para motor",
+        "Costo": 25.50
+    },
+    {
+        "ID": 7,
+        "Repuesto": "Filtro de aire",
+        "Detalles": "Filtro de aire para motor 2.5L",
+        "Costo": 20.25
+    },
+    {
+        "ID": 8,
+        "Repuesto": "Bomba de agua",
+        "Detalles": "Bomba de agua para motor V6",
+        "Costo": 120.00
+    },
+    {
+        "ID": 9,
+        "Repuesto": "Radiador",
+        "Detalles": "Radiador de aluminio para vehículo sedán",
+        "Costo": 150.00
+    },
+    {
+        "ID": 10,
+        "Repuesto": "Cables de encendido",
+        "Detalles": "Cables de encendido para motor 1.4L",
+        "Costo": 40.00
+    },
+    {
+        "ID": 11,
+        "Repuesto": "Filtro de combustible",
+        "Detalles": "Filtro de combustible para motor 2.2L",
+        "Costo": 35.25
+    },
+    {
+        "ID": 12,
+        "Repuesto": "Aceite de transmisión",
+        "Detalles": "Aceite de transmisión automática para vehículos",
+        "Costo": 40.75
+    },
+    {
+        "ID": 13,
+        "Repuesto": "Disco de freno",
+        "Detalles": "Discos de freno delanteros para SUV",
+        "Costo": 95.50
+    },
+    {
+        "ID": 14,
+        "Repuesto": "Soporte de motor",
+        "Detalles": "Soporte de motor para vehículo compact",
+        "Costo": 75.00
+    },
+    {
+        "ID": 15,
+        "Repuesto": "Batería",
+        "Detalles": "Batería de 12V para autos de tamaño medio",
+        "Costo": 120.00
+    },
+    {
+        "ID": 16,
+        "Repuesto": "Espejos retrovisores",
+        "Detalles": "Espejos retrovisores para automóvil",
+        "Costo": 55.00
+    },
+    {
+        "ID": 17,
+        "Repuesto": "Lámparas delanteras",
+        "Detalles": "Lámparas delanteras para vehículo sedán",
+        "Costo": 22.50
+    },
+    {
+        "ID": 18,
+        "Repuesto": "Plato de embrague",
+        "Detalles": "Plato de embrague para vehículos con motor 1.5L",
+        "Costo": 85.00
+    },
+    {
+        "ID": 19,
+        "Repuesto": "Mangueras de refrigeración",
+        "Detalles": "Mangueras de refrigeración para motor 2.0L",
+        "Costo": 30.00
     }
-    ]
+]

@@ -70,8 +70,11 @@ public class interfazAdmin : Window
         btn.ModifyBg(StateType.Normal, new Gdk.Color(0, 150, 0)); // Verde
         btn.ModifyFg(StateType.Normal, new Gdk.Color(255, 255, 255)); // Texto blanco
         btn.Relief = ReliefStyle.None;
-        btn.Clicked += (sender, e) => Application.Quit();
-        return btn;
+        btn.Clicked += (sender, e) => {
+            this.Destroy(); // Cierra esta ventana
+            Application.Quit(); // Cierra la aplicación completamente
+        };
+        return btn; 
     }
 
     private void AccionBoton(string opcion)
@@ -83,7 +86,9 @@ public class interfazAdmin : Window
         switch(opcion)
         {
             case "Cargas Masivas":
-                // Abrir ventana de cargas masivas
+                Application.Init();
+                new CargaMasivaWindow();
+                Application.Run();
                 break;
             case "Gestion de Entidades":
                 // Abrir ventana de gestión

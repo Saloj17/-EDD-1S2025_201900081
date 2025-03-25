@@ -2,7 +2,9 @@ using Estructuras;
 using System;
 using System.Collections.Generic;
 using System.Text;
-public static class DataStorage
+
+namespace Estructuras{
+public static class Datos
 {
 
     // istaUsuarios lista = new ListaUsuarios();
@@ -12,10 +14,11 @@ public static class DataStorage
     // ArbolBFactura arbolB = new ArbolBFactura(); 
 
     // public static ArbolBFactura facturas = new ArbolBFactura();
-    public static ListaUsuarios usuarios = new ListaUsuarios();
-    public static ListaVehiculos vehiculos = new ListaVehiculos();
-    public static ArbolBinarioServicio servicios = new ArbolBinarioServicio();
-    public static AVLRepuesto repuestos = new AVLRepuesto();
-    public static ArbolBFactura facturas = new ArbolBFactura();
+    public static ListaUsuarios usuariosLista = new ListaUsuarios();
+    public static ListaVehiculos vehiculosLista = new ListaVehiculos();
+    public static ArbolBinarioServicio serviciosArbol = new ArbolBinarioServicio();
+    public static AVLRepuesto repuestosArbol = new AVLRepuesto();
+    public static ArbolBFactura facturasArbol = new ArbolBFactura();
 
+}
 }
