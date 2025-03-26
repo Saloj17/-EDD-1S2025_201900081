@@ -3,12 +3,12 @@ using System;
 using System.Diagnostics;
 using System.Collections.Generic;
 
-public class interfazAdmin : Window
+public class gestiones : Window
 {
-    public interfazAdmin() : base("Administrador")
+    public gestiones() : base("Gestiones")
     {
         // Configuración de la ventana
-        SetDefaultSize(400, 450);
+        SetDefaultSize(400, 200);
         SetPosition(WindowPosition.Center);
         BorderWidth = 15;
         DeleteEvent += (sender, e) => Application.Quit();
@@ -18,7 +18,7 @@ public class interfazAdmin : Window
         Add(mainBox);
 
         // Título
-        Label titleLabel = new Label("<span font='18' weight='bold'>Administrador</span>");
+        Label titleLabel = new Label("<span font='18' weight='bold'>Gestiones</span>");
         titleLabel.UseMarkup = true;
         titleLabel.Justify = Justification.Center;
         titleLabel.MarginBottom = 15;
@@ -26,13 +26,8 @@ public class interfazAdmin : Window
 
         // Crear botones para cada opción
         string[] opciones = {
-            "Cargas Masivas",
-            "Gestion de Entidades",
-            "Actualización de Repuestos",
-            "Visualización de Repuestos",
-            "Generar Servicios",
-            "Control de Logueo",
-            "Generar Reportes"
+            "Gestion Usuarios",
+            "Gestion Vehículos"
         };
 
         foreach (string opcion in opciones)
@@ -85,15 +80,15 @@ public class interfazAdmin : Window
         // Ejemplo de cómo manejar diferentes opciones:
         switch(opcion)
         {
-            case "Cargas Masivas":
-                Application.Init();
-                new CargaMasivaWindow();
-                Application.Run();
-                break;
-            case "Gestion de Entidades":
+            case "Gestion Usuarios":
                 Application.Init();            
-                new gestiones();                   
+                new UsuarioWindow();                   
                 Application.Run(); 
+                break;
+            case "Gestion Vehículos":
+                Application.Init();            
+                new VehiculoWindow();                   
+                Application.Run();
                 break;
             // ... otras opciones
         }
