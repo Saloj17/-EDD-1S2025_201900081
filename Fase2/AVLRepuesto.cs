@@ -142,7 +142,7 @@ namespace Estructuras
         {
             if (raiz != null)
             {
-                Console.WriteLine($"ID: {raiz.Id}, Repuesto: {raiz.Repuesto}, Detalle: {raiz.Detalle}, Costo: {raiz.Costo}");
+                Console.WriteLine($"ID: {raiz.Id}, Repuesto: {raiz.Repuesto}, Detalles: {raiz.Detalle}, Costo: {raiz.Costo}");
                 PreOrden(raiz.Izquierda);
                 PreOrden(raiz.Derecha);
             }
@@ -153,7 +153,7 @@ namespace Estructuras
             if (raiz != null)
             {
                 InOrden(raiz.Izquierda);
-                Console.WriteLine($"ID: {raiz.Id}, Repuesto: {raiz.Repuesto}, Detalle: {raiz.Detalle}, Costo: {raiz.Costo}");
+                Console.WriteLine($"ID: {raiz.Id}, Repuesto: {raiz.Repuesto}, Detalles: {raiz.Detalle}, Costo: {raiz.Costo}");
                 InOrden(raiz.Derecha);
             }
         }
@@ -166,7 +166,7 @@ namespace Estructuras
                 PostOrden(raiz.Derecha, accion);
                 if (!accion)
                 {
-                    Console.WriteLine($"ID: {raiz.Id}, Repuesto: {raiz.Repuesto}, Detalle: {raiz.Detalle}, Costo: {raiz.Costo}");
+                    Console.WriteLine($"ID: {raiz.Id}, Repuesto: {raiz.Repuesto}, Detalles: {raiz.Detalle}, Costo: {raiz.Costo}");
                 }
                 else
                 {
@@ -310,7 +310,29 @@ namespace Estructuras
             }
         }
 
-    }
+        public void ModificarRepuesto(int id, string repuesto, string detalle, double costo)
+        {
+            ModificarRepuesto(raiz, id, repuesto, detalle, costo);
+        }
 
+        private void ModificarRepuesto(NodoRepuesto? raiz, int id, string repuesto, string detalle, double costo)
+        {
+            if (raiz != null)
+            {
+                if (raiz.Id == id)
+                {
+                    raiz.Repuesto = repuesto;
+                    raiz.Detalle = detalle;
+                    raiz.Costo = costo;
+                }
+                else
+                {
+                    ModificarRepuesto(raiz.Izquierda, id, repuesto, detalle, costo);
+                    ModificarRepuesto(raiz.Derecha, id, repuesto, detalle, costo);
+                }
+            }
+        }
+
+    }
 
 }

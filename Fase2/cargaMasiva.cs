@@ -235,7 +235,7 @@ public class CargaMasivaWindow : Window
                             {   
                                 if (!Datos.repuestosArbol.ExisteNodoPorId(repuesto.ID))
                                 {
-                                    NodoRepuesto nuevo = new NodoRepuesto(repuesto.ID, repuesto.Repuesto, repuesto.Detalle, repuesto.Costo);
+                                    NodoRepuesto nuevo = new NodoRepuesto(repuesto.ID, repuesto.Repuesto, repuesto.Detalles, repuesto.Costo);
                                     Datos.repuestosArbol.Insert(nuevo);
                                 }
                                 else
@@ -260,7 +260,7 @@ public class CargaMasivaWindow : Window
                 // Cerrar el diálogo
                 filechooser.Destroy();
                 Datos.repuestosArbol.PreOrden();
-                Datos.repuestosArbol.GenerarGraphviz();
+                // Datos.repuestosArbol.GenerarGraphviz();
     }
 
     private void ShowMessage(string message)
@@ -295,6 +295,6 @@ public class Repuestoo
 {
     public int ID { get; set; }
     public string Repuesto { get; set; }
-    public string Detalle { get; set; }
+    public string Detalles { get; set; }
     public double Costo { get; set; }
 }

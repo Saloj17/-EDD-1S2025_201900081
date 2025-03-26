@@ -95,6 +95,11 @@ public class interfazAdmin : Window
                 new gestiones();                   
                 Application.Run(); 
                 break;
+            case "Actualización de Repuestos":
+                Application.Init();
+                new ActualizarRepuestoWindow();
+                Application.Run();
+                break;
             // ... otras opciones
         }
     }
