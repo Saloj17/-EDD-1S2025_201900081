@@ -100,6 +100,11 @@ public class interfazAdmin : Window
                 new ActualizarRepuestoWindow();
                 Application.Run();
                 break;
+            case "Visualización de Repuestos":
+                Application.Init();
+                new visualizarRepuestos();
+                Application.Run();
+                break;
             // ... otras opciones
         }
     }

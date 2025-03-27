@@ -176,6 +176,60 @@ namespace Estructuras
             }
         }
 
+        //Metodo pre orden que devuelve un arreglo de nodos
+        public List<NodoRepuesto> PreOrdenList()
+        {
+            List<NodoRepuesto> lista = new List<NodoRepuesto>();
+            PreOrdenList(raiz, lista);
+            return lista;
+        }
+
+        private void PreOrdenList(NodoRepuesto? raiz, List<NodoRepuesto> lista)
+        {
+            if (raiz != null)
+            {
+                lista.Add(raiz);
+                PreOrdenList(raiz.Izquierda, lista);
+                PreOrdenList(raiz.Derecha, lista);
+            }
+        }
+
+        //Metodo in orden que devuelve un arreglo de nodos
+        public List<NodoRepuesto> InOrdenList()
+        {
+            List<NodoRepuesto> lista = new List<NodoRepuesto>();
+            InOrdenList(raiz, lista);
+            return lista;
+        }
+
+        private void InOrdenList(NodoRepuesto? raiz, List<NodoRepuesto> lista)
+        {
+            if (raiz != null)
+            {
+                InOrdenList(raiz.Izquierda, lista);
+                lista.Add(raiz);
+                InOrdenList(raiz.Derecha, lista);
+            }
+        }
+
+        //Metodo post orden que devuelve un arreglo de nodos
+        public List<NodoRepuesto> PostOrdenList()
+        {
+            List<NodoRepuesto> lista = new List<NodoRepuesto>();
+            PostOrdenList(raiz, lista);
+            return lista;
+        }
+
+        private void PostOrdenList(NodoRepuesto? raiz, List<NodoRepuesto> lista)
+        {
+            if (raiz != null)
+            {
+                PostOrdenList(raiz.Izquierda, lista);
+                PostOrdenList(raiz.Derecha, lista);
+                lista.Add(raiz);
+            }
+        }
+
 
         // Método para generar el código DOT del árbol
         public void GenerarGraphviz()
