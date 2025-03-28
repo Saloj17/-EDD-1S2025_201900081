@@ -171,5 +171,36 @@ namespace Estructuras
                 }
             }
         }
+
+        // Método para buscar por id
+        public NodoServicio? Buscar(int id)
+        {
+            return BuscarRec(Raiz, id);
+        }
+        // Función recursiva para buscar un nodo por id
+        private NodoServicio? BuscarRec(NodoServicio? raiz, int id)
+        {
+            // Si el árbol está vacío o el id es igual al id del nodo actual, retornar el nodo
+            if (raiz == null || raiz.Id == id)
+            {
+                return raiz;
+            }
+
+            // Si el id es menor, buscar en el subárbol izquierdo
+            if (id < raiz.Id)
+            {
+                return BuscarRec(raiz.Izquierda, id);
+            }
+
+            // Si el id es mayor, buscar en el subárbol derecho
+            return BuscarRec(raiz.Derecha, id);
+        }
+
+        // metodo para verificar si existe un nodo por id
+        public bool Existe(int id)
+        {
+            return Buscar(id) != null;
+        }
+        
     }
 }

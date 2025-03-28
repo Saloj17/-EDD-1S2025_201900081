@@ -255,7 +255,7 @@ namespace Estructuras
             while (temp != null)
             {
                 // Mostrar Id, Id_Servicio y Total para todas las claves
-                dotBuilder.Append($" |Id: {temp.Id}\\n Servicio: {temp.Id_Servicio}\\n Total: {temp.Total}|");
+                dotBuilder.Append($" |Id: {temp.Id}\\n Id Servicio: {temp.Id_Servicio}\\n Total: {temp.Total}|");
                 temp = temp.Sig;
             }
             dotBuilder.AppendLine("\" style=\"filled\" fillcolor=\"#96cbb0\" fontname=\"Helvetica-Bold\" fontsize = 18];");
@@ -278,6 +278,38 @@ namespace Estructuras
                 temp = temp.Sig;
             }
         }
+        // Metodo booleano para buscar una factura por ID
+        public bool BuscarFacturaBool(int id)
+        {
+            return BuscarEnNodoBool(id, raiz);
+        }
+
+        private bool BuscarEnNodoBool(int id, NodoFactura nodo)
+        {
+            if (nodo == null) return false;
+
+            // Buscar en las claves del nodo
+            Llave temp = nodo.Primero;
+            while (temp != null)
+            {
+                if (temp.Id == id) return true; // Encontrada
+                temp = temp.Sig;
+            }
+
+            // Si no se encuentra, buscar en los hijos
+            temp = nodo.Primero;
+            while (temp != null)
+            {
+                bool resultado = BuscarEnNodoBool(id, temp.Izquierda);
+                if (resultado) return true; // Encontrada en el hijo izquierdo
+
+                temp = temp.Sig;
+            }
+
+            return false; // No encontrada
+        }
+
+
 
     }
 }

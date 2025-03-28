@@ -67,7 +67,10 @@ public class LoginWindow : Window
             {
                 Application.Init();                  // Inicializa GTK
                 new interfazAdmin();                   // Crea la ventana
-                Application.Run();                  // Bucle principal      
+                Application.Run();                  // Bucle principal   
+                
+                this.Destroy();
+                Application.Quit();  
             }
             else
             {

@@ -1,24 +1,9 @@
 digraph G {
-label = "José Luis Saloj - 201900081
+label = "Arbol Servicios
 
 ";
 
 labelloc = "t";
 fontsize = 24;
 fontname = "Helvetica-Bold";
- 10 [label="Id: 10 \n Repuesto: 101  |  Vehículo: 2001 \n Detalles: Cambio de aceite \n Costo: 50" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
-  10 -> 5;
- 5 [label="Id: 5 \n Repuesto: 102  |  Vehículo: 2002 \n Detalles: Cambio de frenos \n Costo: 200" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
-  5 -> 3;
- 3 [label="Id: 3 \n Repuesto: 104  |  Vehículo: 2004 \n Detalles: Revisión general \n Costo: 30" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
-  5 -> 8;
- 8 [label="Id: 8 \n Repuesto: 105  |  Vehículo: 2005 \n Detalles: Cambio de filtro \n Costo: 25" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
-  10 -> 15;
- 15 [label="Id: 15 \n Repuesto: 103  |  Vehículo: 2003 \n Detalles: Reemplazo de batería \n Costo: 150" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
-  15 -> 20;
- 20 [label="Id: 20 \n Repuesto: 12  |  Vehículo: 2006 \n Detalles: Cambio de aceite \n Costo: 50" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
-  20 -> 25;
- 25 [label="Id: 25 \n Repuesto: 13  |  Vehículo: 2007 \n Detalles: Cambio de aceite \n Costo: 50" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
-  25 -> 30;
- 30 [label="Id: 30 \n Repuesto: 14  |  Vehículo: 2008 \n Detalles: Cambio de aceite \n Costo: 50" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
 }

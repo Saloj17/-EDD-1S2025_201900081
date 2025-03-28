@@ -2,13 +2,15 @@ using Gtk;
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
+using Estructuras;
+using System.IO;
 
-public class interfazAdmin : Window
+public class reportes : Window
 {
-    public interfazAdmin() : base("Administrador")
+    public reportes() : base("Reportes")
     {
         // Configuración de la ventana
-        SetDefaultSize(400, 450);
+        SetDefaultSize(400, 200);
         SetPosition(WindowPosition.Center);
         BorderWidth = 15;
         DeleteEvent += (sender, e) => Application.Quit();
@@ -18,7 +20,7 @@ public class interfazAdmin : Window
         Add(mainBox);
 
         // Título
-        Label titleLabel = new Label("<span font='18' weight='bold'>Administrador</span>");
+        Label titleLabel = new Label("<span font='18' weight='bold'>Reportes</span>");
         titleLabel.UseMarkup = true;
         titleLabel.Justify = Justification.Center;
         titleLabel.MarginBottom = 15;
@@ -26,13 +28,12 @@ public class interfazAdmin : Window
 
         // Crear botones para cada opción
         string[] opciones = {
-            "Cargas Masivas",
-            "Gestion de Entidades",
-            "Actualización de Repuestos",
-            "Visualización de Repuestos",
-            "Generar Servicios",
-            "Control de Logueo",
-            "Generar Reportes"
+            "Usuarios",
+            "Vehículos",
+            "Repuestos",
+            "Servicios",
+            "Facturas"
+
         };
 
         foreach (string opcion in opciones)
@@ -85,40 +86,21 @@ public class interfazAdmin : Window
         // Ejemplo de cómo manejar diferentes opciones:
         switch(opcion)
         {
-            case "Cargas Masivas":
-                Application.Init();
-                new CargaMasivaWindow();
-                Application.Run();
+            case "Usuarios":
+                Datos.usuariosLista.GenerarGraphviz(); 
                 break;
-            case "Gestion de Entidades":
-                Application.Init();            
-                new gestiones();                   
-                Application.Run(); 
+            case "Vehículos":
+                Datos.vehiculosLista.GenerarGraphviz();
                 break;
-            case "Actualización de Repuestos":
-                Application.Init();
-                new ActualizarRepuestoWindow();
-                Application.Run();
+            case "Repuestos":
+                Datos.repuestosArbol.GenerarGraphviz();
                 break;
-            case "Visualización de Repuestos":
-                Application.Init();
-                new visualizarRepuestos();
-                Application.Run();
+            case "Servicios":
+                Datos.serviciosArbol.GenerarGraphviz();
                 break;
-            case "Generar Servicios":
-                Application.Init();
-                new generarServicio();                  
-                Application.Run();                  
+            case "Facturas":
+                Datos.facturasArbol.GenerarGraphviz();
                 break;
-            case "Control de Logueo":
-                Console.WriteLine("Control de Logueo no implementado.");                 
-                break;
-            case "Generar Reportes":
-                Application.Init();
-                new reportes();                  
-                Application.Run();                  
-                break;
-            // ... otras opciones
         }
     }
 }
