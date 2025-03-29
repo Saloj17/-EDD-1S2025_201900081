@@ -1,5 +1,15 @@
+# Universidad de San Carlos de Guatemala
+# Facultad de Ingenieria
+# Escuela de Ciencias y Sistemas
+# Estructura de Datos
+# Sección C
+# José Luis Saloj
+# 201900081
+---
+---
 # Manual de Usuario - AutoGest Pro
-
+---
+---
 ## 1. Introducción
 AutoGest Pro es un sistema de gestión diseñado para talleres de reparación de vehículos. Permite administrar usuarios, vehículos, repuestos, servicios y facturas de manera eficiente utilizando estructuras de datos avanzadas. Este manual explica cómo utilizar el sistema tanto para administradores como para usuarios regulares.
 
