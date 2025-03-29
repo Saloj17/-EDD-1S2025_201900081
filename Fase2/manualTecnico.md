@@ -1,5 +1,15 @@
+# Universidad de San Carlos de Guatemala
+# Facultad de Ingenieria
+# Escuela de Ciencias y Sistemas
+# Estructura de Datos
+# Sección C
+# José Luis Saloj
+# 201900081
+---
+---
 # Manual Técnico - AutoGest Pro
-
+---
+---
 ## 1. Introducción
 Sistema de gestión para talleres vehiculares desarrollado en **C#** con **GTK** para interfaces gráficas. Combina estructuras de datos avanzadas para optimizar el almacenamiento y consulta de información.
 
