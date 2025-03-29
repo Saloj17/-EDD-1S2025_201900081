@@ -6,4 +6,19 @@ label = "Arbol Servicios
 labelloc = "t";
 fontsize = 24;
 fontname = "Helvetica-Bold";
+ 1 [label="Id: 1 \n Repuesto: 1  |  Vehículo: 1 \n Detalles: servicio1 \n Costo: 100" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
+  1 -> -2;
+ -2 [label="Id: -2 \n Repuesto: 1  |  Vehículo: 2 \n Detalles: Servicio7 \n Costo: 700" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
+  -2 -> 0;
+ 0 [label="Id: 0 \n Repuesto: 2  |  Vehículo: 6 \n Detalles: Servicio8 \n Costo: 800" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
+  1 -> 2;
+ 2 [label="Id: 2 \n Repuesto: 2  |  Vehículo: 2 \n Detalles: Servicio2 \n Costo: 200" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
+  2 -> 3;
+ 3 [label="Id: 3 \n Repuesto: 3  |  Vehículo: 3 \n Detalles: Servicio3 \n Costo: 300" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
+  3 -> 4;
+ 4 [label="Id: 4 \n Repuesto: 4  |  Vehículo: 4 \n Detalles: Servicio4 \n Costo: 400" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
+  4 -> 5;
+ 5 [label="Id: 5 \n Repuesto: 5  |  Vehículo: 5 \n Detalles: servicio5 \n Costo: 500" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
+  5 -> 6;
+ 6 [label="Id: 6 \n Repuesto: 6  |  Vehículo: 6 \n Detalles: servicio6 \n Costo: 600" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
 }
