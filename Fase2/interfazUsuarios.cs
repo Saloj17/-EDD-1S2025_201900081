@@ -2,6 +2,7 @@ using Gtk;
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
+using Estructuras;
 
 public class interfazUsuarios : Window
 {
@@ -18,7 +19,7 @@ public class interfazUsuarios : Window
         Add(mainBox);
 
         // Título
-        Label titleLabel = new Label("<span font='18' weight='bold'>Usuarios</span>");
+        Label titleLabel = new Label($"<span font='18' weight='bold'>Bienvenido\n{Datos.usuariosLista.BuscarUsuarioId(Datos.idUsuarioLogin).Nombre}</span>");
         titleLabel.UseMarkup = true;
         titleLabel.Justify = Justification.Center;
         titleLabel.MarginBottom = 15;
@@ -83,10 +84,9 @@ public class interfazUsuarios : Window
         switch(opcion)
         {
             case "Insertar Vehículo":
-                Console.WriteLine("Insertar Vehículo seleccionado.");
-                // Application.Init();
-                // new CargaMasivaWindow();
-                // Application.Run();
+                Application.Init();
+                new insertarVehiculos();
+                Application.Run();
                 break;
             case "Visualización de Servicios":
                 Console.WriteLine("Visualización de Servicios seleccionado.");

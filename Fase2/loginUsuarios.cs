@@ -1,6 +1,6 @@
 using Gtk;
 using System;
-
+using Estructuras;
 public class LoginUsuarios : Window
 {
     public LoginUsuarios() : base("Inicio de Sesión")
@@ -63,8 +63,10 @@ public class LoginUsuarios : Window
         // Evento del botón
         validateButton.Clicked += (sender, e) =>
         {
-            if (emailEntry.Text == "admin@usac.com" && passwordEntry.Text == "admin123")
+            if (Datos.usuariosLista.ExisteUsuarioCorreo(emailEntry.Text) && passwordEntry.Text == Datos.usuariosLista.BuscarUsuarioCorreo(emailEntry.Text).Contrasenia)
             {
+                // Guardar el ID del usuario en la variable estática
+                Datos.idUsuarioLogin = Datos.usuariosLista.BuscarUsuarioCorreo(emailEntry.Text).Id; // ID del usuario encontrado
                 Application.Init();                  // Inicializa GTK
                 new interfazUsuarios();                   // Crea la ventana
                 Application.Run();                  // Bucle principal   

@@ -12,5 +12,7 @@ public static class Datos
     public static AVLRepuesto repuestosArbol = new AVLRepuesto();
     public static ArbolBFactura facturasArbol = new ArbolBFactura();
 
+    public static int idUsuarioLogin = 0;
+
 }
 }

@@ -11,7 +11,8 @@ class Program
     public static void Main(string[] args)
     {
         Application.Init();                  // Inicializa GTK
-        new interfazInicial();                   // Crea la ventana
+        new interfazInicial();
+        // new insertarVehiculos();                   // Crea la ventana
         Application.Run();                   // Bucle principal
     }
 } 
