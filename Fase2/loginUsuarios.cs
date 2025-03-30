@@ -1,9 +1,9 @@
 using Gtk;
 using System;
 
-public class LoginWindow : Window
+public class LoginUsuarios : Window
 {
-    public LoginWindow() : base("Inicio de Sesión")
+    public LoginUsuarios() : base("Inicio de Sesión")
     {
         // Configuración básica de la ventana
         SetDefaultSize(350, 200);
@@ -16,7 +16,7 @@ public class LoginWindow : Window
         Add(mainBox);
 
         // Título centrado (como en la imagen)
-        Label titleLabel = new Label("<span font='16' weight='bold'>Administrador</span>");
+        Label titleLabel = new Label("<span font='16' weight='bold'>Usuarios</span>");
         titleLabel.UseMarkup = true;
         titleLabel.Justify = Justification.Center;
         mainBox.PackStart(titleLabel, false, false, 0);
@@ -66,7 +66,7 @@ public class LoginWindow : Window
             if (emailEntry.Text == "admin@usac.com" && passwordEntry.Text == "admin123")
             {
                 Application.Init();                  // Inicializa GTK
-                new interfazAdmin();                   // Crea la ventana
+                new interfazUsuarios();                   // Crea la ventana
                 Application.Run();                  // Bucle principal   
                 
                 this.Destroy();
