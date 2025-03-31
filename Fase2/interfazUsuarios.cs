@@ -69,6 +69,9 @@ public class interfazUsuarios : Window
         btn.ModifyFg(StateType.Normal, new Gdk.Color(255, 255, 255)); // Texto blanco
         btn.Relief = ReliefStyle.None;
         btn.Clicked += (sender, e) => {
+            Datos.salidaUsuarioLogin = Datos.loginLista.ObtenerFechaActualFormateada(); // Obtener la fecha actual formateada
+            Datos.loginLista.AgregarLogin(Datos.nombreUsuarioLogin, Datos.entradaUsuarioLogin, Datos.salidaUsuarioLogin);
+            
             this.Destroy(); // Cierra esta ventana
             Application.Quit(); // Cierra la aplicación completamente
         };

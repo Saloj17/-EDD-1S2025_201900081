@@ -2,6 +2,7 @@ using Gtk;
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
+using Estructuras;
 
 public class interfazAdmin : Window
 {
@@ -111,7 +112,9 @@ public class interfazAdmin : Window
                 Application.Run();                  
                 break;
             case "Control de Logueo":
-                Console.WriteLine("Control de Logueo no implementado.");                 
+                Datos.loginLista.GenerarJson();
+                Datos.loginLista.AbrirJson();
+                Datos.loginLista.MostrarLista();                 
                 break;
             case "Generar Reportes":
                 Application.Init();

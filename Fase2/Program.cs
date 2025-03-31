@@ -11,8 +11,7 @@ class Program
     public static void Main(string[] args)
     {
         Application.Init();                  
-        new interfazInicial();
-        // new visualizarServicios();                   
-        Application.Run();                   
+        new interfazInicial();                  
+        Application.Run(); 
     }
-} 
+}

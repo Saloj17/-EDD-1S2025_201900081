@@ -65,11 +65,14 @@ public class LoginUsuarios : Window
         {
             if (Datos.usuariosLista.ExisteUsuarioCorreo(emailEntry.Text) && passwordEntry.Text == Datos.usuariosLista.BuscarUsuarioCorreo(emailEntry.Text).Contrasenia)
             {
+                Datos.nombreUsuarioLogin = emailEntry.Text;
+                Datos.entradaUsuarioLogin = Datos.loginLista.ObtenerFechaActualFormateada();
                 // Guardar el ID del usuario en la variable estática
                 Datos.idUsuarioLogin = Datos.usuariosLista.BuscarUsuarioCorreo(emailEntry.Text).Id; // ID del usuario encontrado
                 Application.Init();                  // Inicializa GTK
                 new interfazUsuarios();                   // Crea la ventana
-                Application.Run();                  // Bucle principal   
+                Application.Run();                  // Bucle principal 
+
                 
                 this.Destroy();
                 Application.Quit();  
