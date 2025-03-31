@@ -29,6 +29,16 @@ namespace Estructuras
         // Método para agregar un nuevo nodo al final de la lista
         public void AgregarUsuario(int id, string nombre, string apellido, string correo, int edad, string contrasenia)
         {
+            if (ExisteUsuarioCorreo(correo))
+            {
+                Console.WriteLine("El correo ya existe en la lista.");
+                return;
+            }
+            if (ExisteUsuarioId(id))
+            {
+                Console.WriteLine("El ID ya existe en la lista.");
+                return;
+            }
             NodoUsuario nuevo = new NodoUsuario(id, nombre, apellido, correo, edad, contrasenia);
             if (primero == null)
             {

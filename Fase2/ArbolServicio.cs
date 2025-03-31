@@ -101,6 +101,68 @@ namespace Estructuras
             }
         }
 
+        //Metodo pre orden que devuelve un arreglo de nodos
+        public List<NodoServicio> PreOrdenList()
+        {
+            List<NodoServicio> lista = new List<NodoServicio>();
+            PreOrdenRec(Raiz, lista);
+            return lista;
+        }
+        // Función recursiva para el recorrido en preorden y llenar la lista
+        private void PreOrdenRec(NodoServicio? raiz, List<NodoServicio> lista)
+        {
+            if (raiz != null)
+            {
+                // Primero visitamos el nodo actual
+                lista.Add(raiz);
+                // Luego recorremos el subárbol izquierdo
+                PreOrdenRec(raiz.Izquierda, lista);
+                // Finalmente, recorremos el subárbol derecho
+                PreOrdenRec(raiz.Derecha, lista);
+            }
+        }
+
+        //Metodo in orden que devuelve un arreglo de nodos
+        public List<NodoServicio> InOrdenList()
+        {
+            List<NodoServicio> lista = new List<NodoServicio>();
+            InOrdenRec(Raiz, lista);
+            return lista;
+        }
+        // Función recursiva para el recorrido en inorden y llenar la lista
+        private void InOrdenRec(NodoServicio? raiz, List<NodoServicio> lista)
+        {
+            if (raiz != null)
+            {
+                // Primero recorremos el subárbol izquierdo
+                InOrdenRec(raiz.Izquierda, lista);
+                // Luego visitamos el nodo actual
+                lista.Add(raiz);
+                // Finalmente, recorremos el subárbol derecho
+                InOrdenRec(raiz.Derecha, lista);
+            }
+        }
+
+        //Metodo post orden que devuelve un arreglo de nodos
+        public List<NodoServicio> PostOrdenList()
+        {
+            List<NodoServicio> lista = new List<NodoServicio>();
+            PostOrdenRec(Raiz, lista);
+            return lista;
+        }
+        // Función recursiva para el recorrido en postorden y llenar la lista
+        private void PostOrdenRec(NodoServicio? raiz, List<NodoServicio> lista)
+        {
+            if (raiz != null)
+            {
+                // Primero recorremos el subárbol izquierdo
+                PostOrdenRec(raiz.Izquierda, lista);
+                // Luego recorremos el subárbol derecho
+                PostOrdenRec(raiz.Derecha, lista);
+                // Finalmente, visitamos el nodo actual
+                lista.Add(raiz);
+            }
+        }
         // Método para generar el código DOT del árbol
         public void GenerarGraphviz()
         {

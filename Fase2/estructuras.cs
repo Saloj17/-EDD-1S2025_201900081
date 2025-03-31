@@ -14,5 +14,10 @@ public static class Datos
 
     public static int idUsuarioLogin = 0;
 
+    // Control de acceso de login
+    public static string nombreUsuarioLogin = "";
+    public static string entradaUsuarioLogin = "";
+    public static string salidaUsuarioLogin = "";
+
 }
 }

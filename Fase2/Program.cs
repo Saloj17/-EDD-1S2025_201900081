@@ -10,9 +10,9 @@ class Program
     [STAThread]
     public static void Main(string[] args)
     {
-        Application.Init();                  // Inicializa GTK
+        Application.Init();                  
         new interfazInicial();
-        // new insertarVehiculos();                   // Crea la ventana
-        Application.Run();                   // Bucle principal
+        // new visualizarServicios();                   
+        Application.Run();                   
     }
 } 

@@ -89,10 +89,9 @@ public class interfazUsuarios : Window
                 Application.Run();
                 break;
             case "Visualización de Servicios":
-                Console.WriteLine("Visualización de Servicios seleccionado.");
-                // Application.Init();            
-                // new gestiones();                   
-                // Application.Run(); 
+                Application.Init();            
+                new visualizarServicios();                   
+                Application.Run(); 
                 break;
             case "Visualización de Facturas":
                 Console.WriteLine("Visualización de Facturas seleccionado.");

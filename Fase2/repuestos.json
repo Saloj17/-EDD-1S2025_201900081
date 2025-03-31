@@ -1,0 +1,92 @@
+[
+    {
+        "ID": 1,
+        "Repuesto": "Filtro de aceite",
+        "Detalles": "Filtra impurezas del aceite del motor.",
+        "Costo": 25.50
+    },
+    {
+        "ID": 2,
+        "Repuesto": "Bujías",
+        "Detalles": "Se usa para la mezcla de aire y combustible.",
+        "Costo": 15.75
+    },
+    {
+        "ID": 3,
+        "Repuesto": "Pastillas de freno",
+        "Detalles": "Componente esencial para el sistema de frenado.",
+        "Costo": 45.90
+    },
+    {
+        "ID": 4,
+        "Repuesto": "Correa de distribución",
+        "Detalles": "Sincroniza el movimiento del cigüeñal y árbol de levas.",
+        "Costo": 62.30
+    },
+    {
+        "ID": 5,
+        "Repuesto": "Batería",
+        "Detalles": "Proporciona energía eléctrica al vehículo.",
+        "Costo": 120.00
+    },
+    {
+        "ID": 6,
+        "Repuesto": "Amortiguadores",
+        "Detalles": "Absorbe impactos y vibraciones del camino.",
+        "Costo": 85.25
+    },
+    {
+        "ID": 7,
+        "Repuesto": "Aceite motor 5W-30",
+        "Detalles": "Lubricante sintético para motor.",
+        "Costo": 38.75
+    },
+    {
+        "ID": 8,
+        "Repuesto": "Filtro de aire",
+        "Detalles": "Filtra partículas del aire que entra al motor.",
+        "Costo": 18.50
+    },
+    {
+        "ID": 9,
+        "Repuesto": "Líquido de frenos",
+        "Detalles": "Fluido hidráulico para sistema de frenos.",
+        "Costo": 12.90
+    },
+    {
+        "ID": 10,
+        "Repuesto": "Radiador",
+        "Detalles": "Refrigera el líquido del sistema de enfriamiento.",
+        "Costo": 150.40
+    },
+    {
+        "ID": 11,
+        "Repuesto": "Termostato",
+        "Detalles": "Regula el flujo de líquido refrigerante.",
+        "Costo": 22.80
+    },
+    {
+        "ID": 12,
+        "Repuesto": "Bomba de agua",
+        "Detalles": "Circula el líquido refrigerante en el motor.",
+        "Costo": 75.60
+    },
+    {
+        "ID": 13,
+        "Repuesto": "Faros delanteros",
+        "Detalles": "Sistema de iluminación principal del vehículo.",
+        "Costo": 65.25
+    },
+    {
+        "ID": 14,
+        "Repuesto": "Sensor de oxígeno",
+        "Detalles": "Mide el nivel de oxígeno en los gases de escape.",
+        "Costo": 58.90
+    },
+    {
+        "ID": 15,
+        "Repuesto": "Alternador",
+        "Detalles": "Genera energía eléctrica mientras el motor está en marcha.",
+        "Costo": 135.75
+    }
+]

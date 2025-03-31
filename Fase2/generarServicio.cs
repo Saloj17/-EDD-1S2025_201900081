@@ -111,6 +111,12 @@ public class generarServicio : Window
 
     private void OnGuardarClicked(object sender, EventArgs e)
     {   
+        // Validar campos
+        if (string.IsNullOrWhiteSpace(idEntry.Text) || string.IsNullOrWhiteSpace(idRepuestoEntry.Text) || string.IsNullOrWhiteSpace(idVehiculoEntry.Text) || string.IsNullOrWhiteSpace(detallesEntry.Text) || string.IsNullOrWhiteSpace(costoEntry.Text))
+        {
+            ShowMessage("Por favor complete todos los campos");
+            return;
+        }
         if(Datos.vehiculosLista.ExisteVehiculoId(int.Parse(idVehiculoEntry.Text))){
             if(Datos.repuestosArbol.ExisteNodoPorId(int.Parse(idRepuestoEntry.Text))){
                 if (!Datos.serviciosArbol.Existe(int.Parse(idEntry.Text))){
