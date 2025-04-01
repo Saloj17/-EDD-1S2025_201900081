@@ -151,7 +151,7 @@ namespace Estructuras
             process.WaitForExit();
 
             //Mostrar la imagen generada
-            Process.Start(new ProcessStartInfo("C:/Users/SALOJ/Desktop/[EDD-25]/-EDD-1S2025_201900081/Fase2/Reportes/usuarios.png") { UseShellExecute = true });
+            Process.Start(new ProcessStartInfo("/home/saloj/Escritorio/-EDD-1S2025_201900081/Fase2/Reportes/usuarios.png") { UseShellExecute = true });
         }
         // Metodo para eliminar un nodo por id
         public void EliminarUsuarioId(int id)

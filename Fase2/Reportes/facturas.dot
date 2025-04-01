@@ -6,9 +6,9 @@ digraph ArbolB {
   labelloc = "t";
   fontsize = 24;
   fontname = "Helvetica-Bold";
-  nodo_43332040 [label=" |Id: 5702\n Id Servicio: 3\n Total: 300|" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-  nodo_54444047 [label=" |Id: 2750\n Id Servicio: 4\n Total: 400| |Id: 4037\n Id Servicio: 5\n Total: 500|" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-  nodo_43332040 -> nodo_54444047;
-  nodo_20234383 [label=" |Id: 8367\n Id Servicio: 1\n Total: 100| |Id: 9944\n Id Servicio: 2\n Total: 200|" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-  nodo_43332040 -> nodo_20234383;
+  nodo_33675143 [label=" |Id: 4625\n Id Servicio: 1\n Total: 75|" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+  nodo_34640832 [label=" |Id: 732\n Id Servicio: 4\n Total: 100| |Id: 4541\n Id Servicio: 9\n Total: 150|" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+  nodo_33675143 -> nodo_34640832;
+  nodo_43332040 [label=" |Id: 8667\n Id Servicio: 15\n Total: 150| |Id: 9685\n Id Servicio: 6\n Total: 150|" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+  nodo_33675143 -> nodo_43332040;
 }

@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Text.Json;
+using System.Runtime.InteropServices;
 
 namespace Estructuras
 {
@@ -82,46 +83,92 @@ namespace Estructuras
             return lista;
         }
 
-        public void GenerarJson()
+        
+
+
+
+
+
+    private static readonly string BaseDirectory = "/home/saloj/Escritorio/-EDD-1S2025_201900081/Fase2";
+
+    public void GenerarJson()
+    {
+        List<NodoLogin> lista = ObtenerLista();
+
+        // Proyectar solo las propiedades necesarias
+        var datosFiltrados = lista.Select(nodo => new
         {
-            List<NodoLogin> lista = ObtenerLista();
+            Correo = nodo.Correo,
+            Entrada = nodo.Entrada,
+            Salida = nodo.Salida
+        }).ToList();
 
-            // Proyectar solo las propiedades necesarias
-            var datosFiltrados = lista.Select(nodo => new
-            {
-                Correo = nodo.Correo,
-                Entrada = nodo.Entrada,
-                Salida = nodo.Salida
-            }).ToList();
+        string json = JsonSerializer.Serialize(datosFiltrados, new JsonSerializerOptions
+        {
+            WriteIndented = true
+        });
 
-            string json = JsonSerializer.Serialize(datosFiltrados, new JsonSerializerOptions
-            {
-                WriteIndented = true
-            });
+        // Crear el directorio si no existe
+        Directory.CreateDirectory(BaseDirectory);
+        
+        // Ruta completa del archivo
+        string rutaArchivo = Path.Combine(BaseDirectory, "listaLogin.json");
+        
+        File.WriteAllText(rutaArchivo, json);
+        
+        Console.WriteLine($"Archivo JSON generado en: {rutaArchivo}");
+        
+        // Abrir con el visor predeterminado
+        AbrirArchivo(rutaArchivo);
+    }
 
-            string rutaArchivo = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "listaLogin.json");
-            File.WriteAllText(rutaArchivo, json);
-            Process.Start(new ProcessStartInfo("explorer.exe", rutaArchivo) { UseShellExecute = true });
+    public string ObtenerFechaActualFormateada()
+    {
+        return DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+    }
+
+    public void AbrirJson()
+    {
+        string rutaArchivo = Path.Combine(BaseDirectory, "listaLogin.json");
+        
+        if (File.Exists(rutaArchivo))
+        {
+            AbrirArchivo(rutaArchivo);
         }
-
-        public string ObtenerFechaActualFormateada()
+        else
         {
-            return DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            Console.WriteLine($"El archivo JSON no existe en: {rutaArchivo}");
         }
+    }
 
-        //Metodo para abrir el archivo JSON
-        public void AbrirJson()
+    private void AbrirArchivo(string rutaArchivo)
+    {
+        try
         {
-            string rutaArchivo = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "listaLogin.json");
-            if (File.Exists(rutaArchivo))
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
-                Process.Start(new ProcessStartInfo("explorer.exe", rutaArchivo) { UseShellExecute = true });
+                Process.Start("xdg-open", rutaArchivo);
             }
-            else
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                Console.WriteLine("El archivo JSON no existe.");
+                Process.Start("explorer.exe", rutaArchivo);
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                Process.Start("open", rutaArchivo);
             }
         }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error al abrir el archivo: {ex.Message}");
+        }
+    }
+
+
+
+
+
+
 
     }
 }
