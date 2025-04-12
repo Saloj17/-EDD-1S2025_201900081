@@ -1,0 +1,20 @@
+digraph G {
+    node [shape=ellipse];
+    rankdir=LR;
+    subgraph cluster_0 {
+        label = "Lista Vehiculos";
+        lalbelloc = "t";
+        fontsize = 24;
+        fontname = "Helvetica-Bold";
+n0 [label = "ID: 1 \n ID Usuario: 1 \n Marca: Toyota \n Modelo: 2020 \n Placa: ABC123"style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+n1 [label = "ID: 2 \n ID Usuario: 1 \n Marca: Honda \n Modelo: 2021 \n Placa: DEF456"style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+n2 [label = "ID: 3 \n ID Usuario: 2 \n Marca: Ford \n Modelo: 2022 \n Placa: GHI789"style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+n3 [label = "ID: 4 \n ID Usuario: 2 \n Marca: Chevrolet \n Modelo: 2023 \n Placa: JKL012"style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+        n0 -> n1;
+        n1 -> n0;
+        n1 -> n2;
+        n2 -> n1;
+        n2 -> n3;
+        n3 -> n2;
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "2dt32MEIzws=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\SALOJ\\Desktop\\[EDD-25]\\-EDD-1S2025_201900081\\Fase3\\Fase3.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SALOJ\\.nuget\\packages\\atksharp\\3.24.24.95\\atksharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\SALOJ\\.nuget\\packages\\cairosharp\\3.24.24.95\\cairosharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\SALOJ\\.nuget\\packages\\gdksharp\\3.24.24.95\\gdksharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\SALOJ\\.nuget\\packages\\giosharp\\3.24.24.95\\giosharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\SALOJ\\.nuget\\packages\\glibsharp\\3.24.24.95\\glibsharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\SALOJ\\.nuget\\packages\\gtksharp\\3.24.24.95\\gtksharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\SALOJ\\.nuget\\packages\\pangosharp\\3.24.24.95\\pangosharp.3.24.24.95.nupkg.sha512"
+  ],
+  "logs": []
+}

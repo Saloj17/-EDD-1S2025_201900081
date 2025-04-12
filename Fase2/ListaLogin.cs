@@ -89,7 +89,7 @@ namespace Estructuras
 
 
 
-    private static readonly string BaseDirectory = "/home/saloj/Escritorio/-EDD-1S2025_201900081/Fase2";
+    private static readonly string BaseDirectory = "C:\\Users\\SALOJ\\Desktop\\[EDD-25]\\-EDD-1S2025_201900081\\Fase2\\Reportes";
 
     public void GenerarJson()
     {

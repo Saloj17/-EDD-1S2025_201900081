@@ -1,0 +1,61 @@
+graph G {
+rankdir ="LR";
+label = "Grafos
+
+";
+
+labelloc = "t";
+fontsize = 24;
+fontname = "Helvetica-Bold";
+V1[label="V1 
+ Id Usuario: 1
+ Marca: Toyota
+ Modelo: 2020 
+ Placa: ABC123"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R2 [label="R2 
+ Repuesto: aceite 
+ Detalles: Aceite de motor 
+ Costo: 5"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V1 -- R2 [dir=normal];
+V1 -- R1 [dir=normal];
+V2[label="V2 
+ Id Usuario: 1
+ Marca: Honda
+ Modelo: 2021 
+ Placa: DEF456"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R2 [label="R2 
+ Repuesto: aceite 
+ Detalles: Aceite de motor 
+ Costo: 5"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V2 -- R2 [dir=normal];
+V3[label="V3 
+ Id Usuario: 2
+ Marca: Ford
+ Modelo: 2022 
+ Placa: GHI789"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R4 [label="R4 
+ Repuesto: bateria 
+ Detalles: Bateria de auto 
+ Costo: 10"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V3 -- R4 [dir=normal];
+V3[label="V3 
+ Id Usuario: 2
+ Marca: Ford
+ Modelo: 2022 
+ Placa: GHI789"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R3 [label="R3 
+ Repuesto: filtro 
+ Detalles: Filtro de aire 
+ Costo: 2.5"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V3 -- R3 [dir=normal];
+V3[label="V3 
+ Id Usuario: 2
+ Marca: Ford
+ Modelo: 2022 
+ Placa: GHI789"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R1 [label="R1 
+ Repuesto: frenos 
+ Detalles: Frenos de auto 
+ Costo: 7"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V3 -- R1 [dir=normal];
+}

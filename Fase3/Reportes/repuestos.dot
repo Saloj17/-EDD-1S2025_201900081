@@ -1,0 +1,16 @@
+digraph G {
+label = "AVL Repuestos
+
+";
+
+labelloc = "t";
+fontsize = 24;
+fontname = "Helvetica-Bold";
+ 2 [label="Id: 2 \n Repuesto: aceite \n Detalles: Aceite de motor \n Costo: 5"        style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+  2 -> 1;
+ 1 [label="Id: 1 \n Repuesto: frenos \n Detalles: Frenos de auto \n Costo: 7"        style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+  2 -> 3;
+ 3 [label="Id: 3 \n Repuesto: filtro \n Detalles: Filtro de aire \n Costo: 2.5"        style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+  3 -> 4;
+ 4 [label="Id: 4 \n Repuesto: bateria \n Detalles: Bateria de auto \n Costo: 10"        style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+}

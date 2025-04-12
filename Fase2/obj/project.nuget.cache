@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "zGpXDaFm45G2sD9WxhsKkmduwgJkrmz+3vrSO+I37UOI13lrf0+fDxNxI56gY2bWFowd0abevk88pRHzo5fN/w==",
+  "dgSpecHash": "a53z+ZiO48M=",
   "success": true,
-  "projectFilePath": "/home/saloj/Escritorio/-EDD-1S2025_201900081/Fase2/Fase2.csproj",
+  "projectFilePath": "C:\\Users\\SALOJ\\Desktop\\[EDD-25]\\-EDD-1S2025_201900081\\Fase2\\Fase2.csproj",
   "expectedPackageFiles": [
-    "/home/saloj/.nuget/packages/atksharp/3.24.24.95/atksharp.3.24.24.95.nupkg.sha512",
-    "/home/saloj/.nuget/packages/cairosharp/3.24.24.95/cairosharp.3.24.24.95.nupkg.sha512",
-    "/home/saloj/.nuget/packages/gdksharp/3.24.24.95/gdksharp.3.24.24.95.nupkg.sha512",
-    "/home/saloj/.nuget/packages/giosharp/3.24.24.95/giosharp.3.24.24.95.nupkg.sha512",
-    "/home/saloj/.nuget/packages/glibsharp/3.24.24.95/glibsharp.3.24.24.95.nupkg.sha512",
-    "/home/saloj/.nuget/packages/gtksharp/3.24.24.95/gtksharp.3.24.24.95.nupkg.sha512",
-    "/home/saloj/.nuget/packages/pangosharp/3.24.24.95/pangosharp.3.24.24.95.nupkg.sha512"
+    "C:\\Users\\SALOJ\\.nuget\\packages\\atksharp\\3.24.24.95\\atksharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\SALOJ\\.nuget\\packages\\cairosharp\\3.24.24.95\\cairosharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\SALOJ\\.nuget\\packages\\gdksharp\\3.24.24.95\\gdksharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\SALOJ\\.nuget\\packages\\giosharp\\3.24.24.95\\giosharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\SALOJ\\.nuget\\packages\\glibsharp\\3.24.24.95\\glibsharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\SALOJ\\.nuget\\packages\\gtksharp\\3.24.24.95\\gtksharp.3.24.24.95.nupkg.sha512",
+    "C:\\Users\\SALOJ\\.nuget\\packages\\pangosharp\\3.24.24.95\\pangosharp.3.24.24.95.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,0 +1,108 @@
+[
+    {
+        "ID": 1,
+        "ID_Usuario": 1,
+        "Marca": "Honda Civic",
+        "Modelo": 2005,
+        "Placa": "XZJ7H9K"
+    },
+    {
+        "ID": 2,
+        "ID_Usuario": 2,
+        "Marca": "Toyota Corolla",
+        "Modelo": 2010,
+        "Placa": "JKS8T5A"
+    },
+    {
+        "ID": 3,
+        "ID_Usuario": 3,
+        "Marca": "Ford F-150",
+        "Modelo": 2018,
+        "Placa": "MNB4V6C"
+    },
+    {
+        "ID": 4,
+        "ID_Usuario": 1,
+        "Marca": "Chevrolet Spark",
+        "Modelo": 2015,
+        "Placa": "QWE3R5T"
+    },
+    {
+        "ID": 5,
+        "ID_Usuario": 4,
+        "Marca": "Nissan Sentra",
+        "Modelo": 2019,
+        "Placa": "YUI8O7P"
+    },
+    {
+        "ID": 6,
+        "ID_Usuario": 5,
+        "Marca": "Volkswagen Jetta",
+        "Modelo": 2017,
+        "Placa": "ASD2F4G"
+    },
+    {
+        "ID": 7,
+        "ID_Usuario": 2,
+        "Marca": "Hyundai Tucson",
+        "Modelo": 2020,
+        "Placa": "HJK9L0Z"
+    },
+    {
+        "ID": 8,
+        "ID_Usuario": 6,
+        "Marca": "Kia Sportage",
+        "Modelo": 2016,
+        "Placa": "XCY1V3B"
+    },
+    {
+        "ID": 9,
+        "ID_Usuario": 7,
+        "Marca": "Mazda CX-5",
+        "Modelo": 2021,
+        "Placa": "NMQ8W7E"
+    },
+    {
+        "ID": 10,
+        "ID_Usuario": 3,
+        "Marca": "Subaru Outback",
+        "Modelo": 2014,
+        "Placa": "RTY6U5I"
+    },
+    {
+        "ID": 11,
+        "ID_Usuario": 8,
+        "Marca": "Jeep Wrangler",
+        "Modelo": 2013,
+        "Placa": "POL9I8U"
+    },
+    {
+        "ID": 12,
+        "ID_Usuario": 4,
+        "Marca": "BMW X3",
+        "Modelo": 2018,
+        "Placa": "ZXC4V2N"
+    },
+    {
+        "ID": 13,
+        "ID_Usuario": 9,
+        "Marca": "Mercedes-Benz C-Class",
+        "Modelo": 2019,
+        "Placa": "MLP5O6K"
+    },
+    {
+        "ID": 14,
+        "ID_Usuario": 10,
+        "Marca": "Audi A4",
+        "Modelo": 2017,
+        "Placa": "QAZ1W2S"
+    },
+    {
+        "ID": 15,
+        "ID_Usuario": 5,
+        "Marca": "Lexus RX",
+        "Modelo": 2020,
+        "Placa": "EDC3R4F"
+    }
+]
+    
