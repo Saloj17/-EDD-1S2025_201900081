@@ -10,6 +10,11 @@
   <ItemGroup>
     <PackageReference Include="GtkSharp" Version="3.24.24.95" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  
 </Project>
 
 

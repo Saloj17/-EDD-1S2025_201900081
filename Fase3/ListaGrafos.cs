@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace Estructuras
 {
 
-    class ListaGrafos
+    public class ListaGrafos
     {
         public NodoGrafo Cabecera { get; set; } = null;
         public NodoGrafo Cola { get; set; } = null;

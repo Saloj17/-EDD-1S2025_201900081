@@ -10,6 +10,9 @@ public static class Datos
     public static ListaVehiculos vehiculosLista = new ListaVehiculos();
     // public static ArbolBinarioServicio serviciosArbol = new ArbolBinarioServicio();
     public static AVLRepuesto repuestosArbol = new AVLRepuesto();
+    public static ListaGrafos grafoLista = new ListaGrafos();
+    public static Blockchain blockchain = new Blockchain();
+    
     // public static ArbolBFactura facturasArbol = new ArbolBFactura();
     // public static ListaLogin loginLista = new ListaLogin();
 

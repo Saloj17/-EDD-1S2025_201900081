@@ -1,6 +1,6 @@
 using System;
 using System.Text;
-class SubNodo
+public class SubNodo
 {
     public int Valor { get; set; }
     public SubNodo Siguiente { get; set; } = null;
@@ -11,7 +11,7 @@ class SubNodo
     }
 }
 
-class NodoGrafo
+public class NodoGrafo
 {
     public int Indice { get; set; }
     public NodoGrafo Siguiente { get; set; } = null;
