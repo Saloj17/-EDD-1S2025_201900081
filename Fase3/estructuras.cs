@@ -6,9 +6,8 @@ using System.Text;
 namespace Estructuras{
 public static class Datos
 {
-    // public static ListaUsuarios usuariosLista = new ListaUsuarios();
     public static ListaVehiculos vehiculosLista = new ListaVehiculos();
-    // public static ArbolBinarioServicio serviciosArbol = new ArbolBinarioServicio();
+    public static ArbolBinarioServicio serviciosArbol = new ArbolBinarioServicio();
     public static AVLRepuesto repuestosArbol = new AVLRepuesto();
     public static ListaGrafos grafoLista = new ListaGrafos();
     public static Blockchain blockchain = new Blockchain();
@@ -18,7 +17,7 @@ public static class Datos
 
 
 
-    // public static int idUsuarioLogin = 0;
+    public static int idUsuarioLogin = 0;
 
     // // Control de acceso de login
     // public static string nombreUsuarioLogin = "";

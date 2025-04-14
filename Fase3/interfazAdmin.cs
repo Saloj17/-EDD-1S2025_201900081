@@ -2,13 +2,14 @@ using Gtk;
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
+using Estructuras;
 
-public class interfazInicial : Window
+public class interfazAdmin : Window
 {
-    public interfazInicial() : base("Init")
+    public interfazAdmin() : base("Administrador")
     {
         // Configuración de la ventana
-        SetDefaultSize(400, 250);
+        SetDefaultSize(400, 450);
         SetPosition(WindowPosition.Center);
         BorderWidth = 15;
         DeleteEvent += (sender, e) => Application.Quit();
@@ -18,7 +19,7 @@ public class interfazInicial : Window
         Add(mainBox);
 
         // Título
-        Label titleLabel = new Label("<span font='18' weight='bold'>Iniciar sesión como:</span>");
+        Label titleLabel = new Label("<span font='18' weight='bold'>Administrador</span>");
         titleLabel.UseMarkup = true;
         titleLabel.Justify = Justification.Center;
         titleLabel.MarginBottom = 15;
@@ -26,8 +27,15 @@ public class interfazInicial : Window
 
         // Crear botones para cada opción
         string[] opciones = {
-            "Administrador",
-            "Usuarios"
+            "Cargas Masivas",
+            "Inserción de Usuarios",
+            "Visualización de Usuarios",
+            "Visualización de Repuestos",
+            "Visualización de Logueo",
+            "Generar Servicios",
+            "Generar Reportes",
+            "Generar Backup",
+            "Cargar Backup"
         };
 
         foreach (string opcion in opciones)
@@ -51,10 +59,10 @@ public class interfazInicial : Window
         btn.ModifyFg(StateType.Normal, new Gdk.Color(255, 255, 255)); // Texto blanco
         btn.ModifyBg(StateType.Prelight, new Gdk.Color(70, 140, 210)); // Azul claro al pasar mouse
         btn.Relief = ReliefStyle.None;
-        
+
         // Asignar evento según la opción
         btn.Clicked += (sender, e) => AccionBoton(texto);
-        
+
         return btn;
     }
 
@@ -65,31 +73,57 @@ public class interfazInicial : Window
         btn.ModifyBg(StateType.Normal, new Gdk.Color(0, 150, 0)); // Verde
         btn.ModifyFg(StateType.Normal, new Gdk.Color(255, 255, 255)); // Texto blanco
         btn.Relief = ReliefStyle.None;
-        btn.Clicked += (sender, e) => {
+        btn.Clicked += (sender, e) =>
+        {
             this.Destroy(); // Cierra esta ventana
             Application.Quit(); // Cierra la aplicación completamente
         };
-        return btn; 
+        return btn;
     }
 
     private void AccionBoton(string opcion)
     {
         // Aquí puedes implementar la lógica para cada botón
         Console.WriteLine($"Acción: {opcion}");
-        
+
         // Ejemplo de cómo manejar diferentes opciones:
-        switch(opcion)
+        switch (opcion)
         {
-            case "Administrador":
+            case "Cargas Masivas":
                 Application.Init();
-                new LoginAdmin(); 
-                Application.Run();               
+                new CargaMasivaWindow();
+                Application.Run();
                 break;
-            case "Usuarios":
-                // Application.Init();              
-                // new LoginUsuarios();                   
-                // Application.Run(); 
-                Console.WriteLine("Acción para Usuarios no implementada.");                 
+            case "Inserción de Usuarios":
+                Application.Init();
+                new insertarUsuarios();
+                Application.Run();
+                break;
+            case "Visualización de Usuarios":
+                break;
+            case "Visualización de Repuestos":
+                // Application.Init();
+                // new visualizarRepuestos();
+                // Application.Run();
+                break;
+            case "Visualización de Logueo":
+                // Datos.loginLista.GenerarJson();
+                // Datos.loginLista.AbrirJson();
+                // Datos.loginLista.MostrarLista();
+                break;
+            case "Generar Servicios":
+                // Application.Init();
+                // new generarServicio();
+                // Application.Run();
+                break;
+            case "Generar Reportes":
+                // Application.Init();
+                // new reportes();
+                // Application.Run();
+                break;
+            case "Generar Backup":
+                break;
+            case "Cargar Backup":
                 break;
         }
     }

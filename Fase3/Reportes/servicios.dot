@@ -1,0 +1,20 @@
+digraph G {
+label = "Arbol Servicios
+
+";
+
+labelloc = "t";
+fontsize = 24;
+fontname = "Helvetica-Bold";
+ 1 [label="Id: 1 \n Repuesto: 3  |  Vehículo: 14 \n Detalles: Cambio de aceite y filtro \n Costo: 150" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
+  1 -> 2;
+ 2 [label="Id: 2 \n Repuesto: 8  |  Vehículo: 5 \n Detalles: Reemplazo de pastillas de freno \n Costo: 200" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
+  2 -> 4;
+ 4 [label="Id: 4 \n Repuesto: 1  |  Vehículo: 7 \n Detalles: Cambio de batería \n Costo: 180" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
+  4 -> 6;
+ 6 [label="Id: 6 \n Repuesto: 6  |  Vehículo: 11 \n Detalles: Reemplazo de neumáticos \n Costo: 400" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
+  6 -> 8;
+ 8 [label="Id: 8 \n Repuesto: 4  |  Vehículo: 9 \n Detalles: Limpieza de inyectores \n Costo: 90" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
+  8 -> 9;
+ 9 [label="Id: 9 \n Repuesto: 15  |  Vehículo: 3 \n Detalles: Reemplazo de correa de distribución \n Costo: 300" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
+}

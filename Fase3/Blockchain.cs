@@ -3,6 +3,7 @@ using System.Text;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Security.Cryptography;
 
 namespace Estructuras
 {
@@ -16,7 +17,7 @@ namespace Estructuras
             var genesisBlock = new Block(0, new Usuario(), "0000");
             Chain.Insert(0, genesisBlock);
         }
-        public void AddBlock(Usuario data)
+        public void AgregarUsuario(Usuario data)
         {
             int index = Chain[0].Index + 1;
             string previousHash = Chain[0].Hash;
@@ -63,7 +64,7 @@ namespace Estructuras
         {
             string codigoDot = GenerarDot();
 
-            string filePath = "Reportes/blockchain.dot";
+            string filePath = "Reportes/usuarios.dot";
 
             // Escribir el contenido en el archivo
             File.WriteAllText(filePath, codigoDot);
@@ -73,7 +74,7 @@ namespace Estructuras
             //generar la imagen
             ProcessStartInfo startInfo = new ProcessStartInfo("dot")
             {
-                Arguments = $"-Tpng Reportes/blockchain.dot -o Reportes/blockchain.png",
+                Arguments = $"-Tpng Reportes/usuarios.dot -o Reportes/usuarios.png",
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 UseShellExecute = false,
@@ -89,8 +90,60 @@ namespace Estructuras
             process.WaitForExit();
 
             //Mostrar la imagen generada
-            Process.Start(new ProcessStartInfo("Reportes\\blockchain.png") { UseShellExecute = true });
+            Process.Start(new ProcessStartInfo("Reportes\\usuarios.png") { UseShellExecute = true });
 
+        }
+
+        public string EncriptacionSHa256(string text)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                // ComputeHash - returns byte array
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(text));
+                return BitConverter.ToString(bytes).Replace("-", "").ToLower();
+
+            }
+        }
+
+        // Metodo para verificar la existencia de un usuario por su ID
+        public bool ExisteUsuarioId(int id)
+        {
+            foreach (Block block in Chain)
+            {
+                if (block.Data.ID == id)
+                {
+                    return true;
+                }
+            }
+            return false; 
+        }
+
+        // Metodo para buscar usuario por su ID
+        public Usuario BuscarUsuarioId(int id)
+        {
+            foreach (Block block in Chain)
+            {
+                if (block.Data.ID == id)
+                {
+                    return block.Data;
+                }
+            }
+            return null;
+        }
+
+        // Metodo para verificar si esta vacio el blockchain
+        public bool EstaVacio()
+        {
+            return Chain.Count == 0;
+        }
+
+        // Metodo para mostrar los usuarios en consola
+        public void Mostrar()
+        {
+            foreach (Block block in Chain)
+            {
+                Console.WriteLine($"ID: {block.Data.ID} \nNombre: {block.Data.Nombres}\nApellido: {block.Data.Apellidos}\nCorreo: {block.Data.Correo}\nEdad: {block.Data.Edad}\nContraseña: {block.Data.Contrasenia}");
+            }
         }
     }
 }

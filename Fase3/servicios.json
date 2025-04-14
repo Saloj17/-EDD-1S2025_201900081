@@ -1,0 +1,72 @@
+[
+    {
+        "Id": 1,
+        "Id_Repuesto": 3,
+        "Id_Vehiculo": 14,
+        "Detalles": "Cambio de aceite y filtro",
+        "Costo": 150.00
+    },
+    {
+        "Id": 2,
+        "Id_Repuesto": 8,
+        "Id_Vehiculo": 5,
+        "Detalles": "Reemplazo de pastillas de freno",
+        "Costo": 200.00
+    },
+    {
+        "Id": 3,
+        "Id_Repuesto": 12,
+        "Id_Vehiculo": 19,
+        "Detalles": "Alineación y balanceo",
+        "Costo": 120.00
+    },
+    {
+        "Id": 4,
+        "Id_Repuesto": 1,
+        "Id_Vehiculo": 7,
+        "Detalles": "Cambio de batería",
+        "Costo": 180.00
+    },
+    {
+        "Id": 5,
+        "Id_Repuesto": 17,
+        "Id_Vehiculo": 2,
+        "Detalles": "Reparación de sistema de escape",
+        "Costo": 250.00
+    },
+    {
+        "Id": 6,
+        "Id_Repuesto": 6,
+        "Id_Vehiculo": 11,
+        "Detalles": "Reemplazo de neumáticos",
+        "Costo": 400.00
+    },
+    {
+        "Id": 7,
+        "Id_Repuesto": 20,
+        "Id_Vehiculo": 16,
+        "Detalles": "Diagnóstico computarizado",
+        "Costo": 80.00
+    },
+    {
+        "Id": 8,
+        "Id_Repuesto": 4,
+        "Id_Vehiculo": 9,
+        "Detalles": "Limpieza de inyectores",
+        "Costo": 90.00
+    },
+    {
+        "Id": 9,
+        "Id_Repuesto": 15,
+        "Id_Vehiculo": 3,
+        "Detalles": "Reemplazo de correa de distribución",
+        "Costo": 300.00
+    },
+    {
+        "Id": 10,
+        "Id_Repuesto": 10,
+        "Id_Vehiculo": 18,
+        "Detalles": "Reparación de aire acondicionado",
+        "Costo": 220.00
+    }
+]
