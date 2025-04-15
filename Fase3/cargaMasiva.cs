@@ -312,6 +312,8 @@ public class CargaMasivaWindow : Window
                                 {
                                     NodoServicio nuevo = new NodoServicio(servicio.Id, servicio.Id_Repuesto, servicio.Id_Vehiculo, servicio.Detalles, servicio.Costo);
                                     Datos.serviciosArbol.Insertar(nuevo);
+
+                                    Datos.grafoLista.Insertar(servicio.Id_Vehiculo, servicio.Id_Repuesto);
                                 }
                                 else
                                 {
@@ -335,7 +337,7 @@ public class CargaMasivaWindow : Window
                 // Cerrar el diálogo
                 filechooser.Destroy();
                 Datos.serviciosArbol.RecorridoEnOrden();
-                Datos.serviciosArbol.GenerarGraphviz();
+                // Datos.serviciosArbol.GenerarGraphviz();
     }
 
     private void ShowMessage(string message)

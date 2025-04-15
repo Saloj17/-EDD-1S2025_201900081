@@ -5,17 +5,16 @@ using System.IO;
 using System.Text.Json;
 using Estructuras;
 
-public class insertarUsuarios : Window
+public class generarServicio : Window
 {
     // Variables para los controles
     private Entry idEntry;
-    private Entry nombresEntry;
-    private Entry apellidosEntry;
-    private Entry correoEntry;
-    private Entry edadEntry;
-    private Entry contraseniaEntry;
+    private Entry idRepuestoEntry;
+    private Entry idVehiculoEntry;
+    private Entry detallesEntry;
+    private Entry costoEntry;
 
-    public insertarUsuarios() : base("usuario")
+    public generarServicio() : base("servicio")
     {
         // Configuración básica de la ventana
         SetDefaultSize(600, 350); // Tamaño ajustado
@@ -28,14 +27,14 @@ public class insertarUsuarios : Window
         Add(mainBox);
 
         // Título
-        Label titleLabel = new Label("<span font='18' weight='bold'>Insertar Usuario</span>");
+        Label titleLabel = new Label("<span font='18' weight='bold'>Crear Servicio</span>");
         titleLabel.UseMarkup = true;
         titleLabel.Justify = Justification.Center;
         titleLabel.ModifyFg(StateType.Normal, new Gdk.Color(50, 120, 180));
         mainBox.PackStart(titleLabel, false, false, 15);
 
         // Tabla para organizar los campos (4 filas, 3 columnas)
-        Table formTable = new Table(6, 2, false);
+        Table formTable = new Table(5, 2, false);
         formTable.RowSpacing = 10;
         formTable.ColumnSpacing = 15;
 
@@ -44,26 +43,22 @@ public class insertarUsuarios : Window
         CreateLabel(formTable, 0, 0, "Id");
         CreateEntry(formTable, 0, 1, out idEntry);
         
-        // Fila 1: nombres (Label + Entry)
-        CreateLabel(formTable, 1, 0, "Nombres");
-        CreateEntry(formTable, 1, 1, out nombresEntry);
+        // Fila 1: id Repuesto (Label + Entry)
+        CreateLabel(formTable, 1, 0, "Id Repuesto");
+        CreateEntry(formTable, 1, 1, out idRepuestoEntry);
         
-        // Fila 2: apellidos (Label + Entry)
-        CreateLabel(formTable, 2, 0, "Apellidos");
-        CreateEntry(formTable, 2, 1, out apellidosEntry);
+        // Fila 2: id vehiculos (Label + Entry)
+        CreateLabel(formTable, 2, 0, "Id Vehiculo");
+        CreateEntry(formTable, 2, 1, out idVehiculoEntry);
 
-        // Fila 3: correo (Label + Entry)
-        CreateLabel(formTable, 3, 0, "Correo");
-        CreateEntry(formTable, 3, 1, out correoEntry);
+        // Fila 3: Detalles (Label + Entry)
+        CreateLabel(formTable, 3, 0, "Detalles");
+        CreateEntry(formTable, 3, 1, out detallesEntry);
 
-        // Fila 4: edad (Label + Entry)
-        CreateLabel(formTable, 4, 0, "Edad");
-        CreateEntry(formTable, 4, 1, out edadEntry);
-
-        // Fila 5: contraseña (Label + Entry)
-        CreateLabel(formTable, 5, 0, "Contraseña");
-        CreateEntry(formTable, 5, 1, out contraseniaEntry);
-
+        
+        // Fila 4: Costo (Label + Entry)
+        CreateLabel(formTable, 4, 0, "Costo");
+        CreateEntry(formTable, 4, 1, out costoEntry);
 
         mainBox.PackStart(formTable, true, true, 0);
 
@@ -117,37 +112,55 @@ public class insertarUsuarios : Window
     private void OnGuardarClicked(object sender, EventArgs e)
     {   
         // Validar campos
-        if (string.IsNullOrWhiteSpace(idEntry.Text) || string.IsNullOrWhiteSpace(nombresEntry.Text) || string.IsNullOrWhiteSpace(apellidosEntry.Text) || string.IsNullOrWhiteSpace(correoEntry.Text) || string.IsNullOrWhiteSpace(edadEntry.Text) || string.IsNullOrWhiteSpace(contraseniaEntry.Text))
+        if (string.IsNullOrWhiteSpace(idEntry.Text) || string.IsNullOrWhiteSpace(idRepuestoEntry.Text) || string.IsNullOrWhiteSpace(idVehiculoEntry.Text) || string.IsNullOrWhiteSpace(detallesEntry.Text) || string.IsNullOrWhiteSpace(costoEntry.Text))
         {
-            ShowMessage("Por favor, complete todos los campos.");
+            ShowMessage("Por favor complete todos los campos");
             return;
         }
-        if(!Datos.blockchain.ExisteUsuarioId(int.Parse(idEntry.Text))){
-            
-            Usuario newUser = new Usuario();
-            
-            newUser.ID = int.Parse(idEntry.Text);
-            newUser.Nombres = nombresEntry.Text;
-            newUser.Apellidos = apellidosEntry.Text;
-            newUser.Correo = correoEntry.Text;
-            newUser.Edad = int.Parse(edadEntry.Text);
-            newUser.Contrasenia = contraseniaEntry.Text;
+        if(Datos.vehiculosLista.ExisteVehiculoId(int.Parse(idVehiculoEntry.Text))){
+            if(Datos.repuestosArbol.ExisteNodoPorId(int.Parse(idRepuestoEntry.Text))){
+                if (!Datos.serviciosArbol.Existe(int.Parse(idEntry.Text))){
+                    NodoServicio servicio = new NodoServicio(int.Parse(idEntry.Text),int.Parse(idRepuestoEntry.Text), int.Parse(idVehiculoEntry.Text), detallesEntry.Text, double.Parse(costoEntry.Text));
+                    Datos.serviciosArbol.Insertar(servicio);
 
-            newUser.Contrasenia = Datos.blockchain.EncriptacionSHa256(newUser.Contrasenia);  
-            Datos.blockchain.AgregarUsuario(newUser);
+                    Datos.grafoLista.Insertar(int.Parse(idVehiculoEntry.Text), int.Parse(idRepuestoEntry.Text));
 
-            // Vaciamos los campos
-            idEntry.Text = "";
-            nombresEntry.Text = "";
-            apellidosEntry.Text = "";
-            correoEntry.Text = "";
-            edadEntry.Text = "";
-            contraseniaEntry.Text = "";
-            ShowMessage("Usuario creado exitosamente");
+                    // // generar un id unico para la factura
+                    // Random random = new Random();
+                    // int idFactura = random.Next(1, 9999);
+                    // if(!Datos.facturasArbol.BuscarFacturaBool(idFactura)){
+                    //     Datos.facturasArbol.Insertar(idFactura, int.Parse(idEntry.Text), double.Parse(costoEntry.Text));
+                    //     ShowMessage("Factura generada con exito, el id de la factura es: " + idFactura);
+                    // }
+                    // else{
+                    //     ShowMessage("El id de la factura ya existe, por favor vuelva a intentarlo");
+                    //     return;
+                    // }
+
+                    // vaciamos los campos
+                    idEntry.Text = "";
+                    idRepuestoEntry.Text = "";
+                    idVehiculoEntry.Text = "";
+                    detallesEntry.Text = "";
+                    costoEntry.Text = "";
+                    ShowMessage("Servicio creado exitosamente");
+
+                    Datos.serviciosArbol.GenerarGraphviz();
+                }
+                else{
+                    idEntry.Text = "";
+                    ShowMessage("El servicio ya existe");
+                    return;
+                }
+                
+            }
+            else{
+                ShowMessage("El repuesto no existe");
+                return;
+            }
         }
         else{
-            ShowMessage($"El usuario con id: {idEntry.Text} \nYa existe");
-            idEntry.Text = "";
+            ShowMessage("El vehiculo no existe");
             return;
         }
     }

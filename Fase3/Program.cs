@@ -56,7 +56,7 @@ class Program
     static void Main(string[] args)
     {
         Application.Init();
-        new interfazAdmin();
+        new interfazInicial();
         Application.Run();
     }
 

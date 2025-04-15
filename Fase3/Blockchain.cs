@@ -105,6 +105,32 @@ namespace Estructuras
             }
         }
 
+        // Metodo para verificar la existencia de un usuario por su correo
+        public bool ExisteUsuarioCorreo(string correo)
+        {
+            foreach (Block block in Chain)
+            {
+                if (block.Data.Correo == correo)
+                {
+                    return true;
+                }
+            }
+            return false; 
+        }
+
+        // Metodo para buscar usuario por su correo
+        public Usuario BuscarUsuarioCorreo(string correo)
+        {
+            foreach (Block block in Chain)
+            {
+                if (block.Data.Correo == correo)
+                {
+                    return block.Data;
+                }
+            }
+            return null;
+        }
+
         // Metodo para verificar la existencia de un usuario por su ID
         public bool ExisteUsuarioId(int id)
         {

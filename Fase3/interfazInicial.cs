@@ -2,6 +2,7 @@ using Gtk;
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
+using Estructuras;
 
 public class interfazInicial : Window
 {
@@ -86,10 +87,24 @@ public class interfazInicial : Window
                 Application.Run();               
                 break;
             case "Usuarios":
-                // Application.Init();              
-                // new LoginUsuarios();                   
-                // Application.Run(); 
-                Console.WriteLine("Acción para Usuarios no implementada.");                 
+                // if (Datos.blockchain.Chain.Count > 1)
+                // {
+                //     Console.WriteLine(Datos.blockchain.Chain.Count);
+                //     Application.Init();              
+                //     new LoginUsuarios();                  
+                //     Application.Run();               
+                // }
+                // else
+                // {
+                //     // Mostrar un mensaje "No hay usuarios registrados"
+                //     MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "No hay usuarios registrados.");
+                //     md.Run();
+                //     md.Destroy();            
+                // }              
+                // break;
+                Application.Init();
+                new LoginUsuarios();
+                Application.Run();
                 break;
         }
     }

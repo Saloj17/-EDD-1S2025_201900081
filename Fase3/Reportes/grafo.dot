@@ -7,55 +7,64 @@ label = "Grafos
 labelloc = "t";
 fontsize = 24;
 fontname = "Helvetica-Bold";
-V1[label="V1 
- Id Usuario: 1
- Marca: Toyota
+V3[label="V3 
+ Id Usuario: 3
+ Marca: Ford F-150
+ Modelo: 2018 
+ Placa: MNB4V6C"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R15 [label="R15 
+ Repuesto: Alternador 
+ Detalles: Genera energía eléctrica mientras el motor está en marcha. 
+ Costo: 135.75"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V3 -- R15 [dir=normal];
+V5[label="V5 
+ Id Usuario: 4
+ Marca: Nissan Sentra
+ Modelo: 2019 
+ Placa: YUI8O7P"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R8 [label="R8 
+ Repuesto: Filtro de aire 
+ Detalles: Filtra partículas del aire que entra al motor. 
+ Costo: 18.5"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V5 -- R8 [dir=normal];
+V7[label="V7 
+ Id Usuario: 2
+ Marca: Hyundai Tucson
  Modelo: 2020 
- Placa: ABC123"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-R2 [label="R2 
- Repuesto: aceite 
- Detalles: Aceite de motor 
- Costo: 5"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-V1 -- R2 [dir=normal];
-V1 -- R1 [dir=normal];
-V2[label="V2 
- Id Usuario: 1
- Marca: Honda
- Modelo: 2021 
- Placa: DEF456"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-R2 [label="R2 
- Repuesto: aceite 
- Detalles: Aceite de motor 
- Costo: 5"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-V2 -- R2 [dir=normal];
-V3[label="V3 
- Id Usuario: 2
- Marca: Ford
- Modelo: 2022 
- Placa: GHI789"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-R4 [label="R4 
- Repuesto: bateria 
- Detalles: Bateria de auto 
- Costo: 10"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-V3 -- R4 [dir=normal];
-V3[label="V3 
- Id Usuario: 2
- Marca: Ford
- Modelo: 2022 
- Placa: GHI789"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-R3 [label="R3 
- Repuesto: filtro 
- Detalles: Filtro de aire 
- Costo: 2.5"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-V3 -- R3 [dir=normal];
-V3[label="V3 
- Id Usuario: 2
- Marca: Ford
- Modelo: 2022 
- Placa: GHI789"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+ Placa: HJK9L0Z"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
 R1 [label="R1 
- Repuesto: frenos 
- Detalles: Frenos de auto 
- Costo: 7"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-V3 -- R1 [dir=normal];
+ Repuesto: Filtro de aceite 
+ Detalles: Filtra impurezas del aceite del motor. 
+ Costo: 25.5"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V7 -- R1 [dir=normal];
+V9[label="V9 
+ Id Usuario: 7
+ Marca: Mazda CX-5
+ Modelo: 2021 
+ Placa: NMQ8W7E"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R4 [label="R4 
+ Repuesto: Correa de distribución 
+ Detalles: Sincroniza el movimiento del cigüeñal y árbol de levas. 
+ Costo: 62.3"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V9 -- R4 [dir=normal];
+V11[label="V11 
+ Id Usuario: 8
+ Marca: Jeep Wrangler
+ Modelo: 2013 
+ Placa: POL9I8U"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R6 [label="R6 
+ Repuesto: Amortiguadores 
+ Detalles: Absorbe impactos y vibraciones del camino. 
+ Costo: 85.25"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V11 -- R6 [dir=normal];
+V14[label="V14 
+ Id Usuario: 10
+ Marca: Audi A4
+ Modelo: 2017 
+ Placa: QAZ1W2S"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R3 [label="R3 
+ Repuesto: Pastillas de freno 
+ Detalles: Componente esencial para el sistema de frenado. 
+ Costo: 45.9"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V14 -- R3 [dir=normal];
 }

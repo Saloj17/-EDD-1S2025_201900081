@@ -13,16 +13,16 @@ public static class Datos
     public static Blockchain blockchain = new Blockchain();
     
     // public static ArbolBFactura facturasArbol = new ArbolBFactura();
-    // public static ListaLogin loginLista = new ListaLogin();
+    public static ListaLogin loginLista = new ListaLogin();
 
 
 
     public static int idUsuarioLogin = 0;
 
-    // // Control de acceso de login
-    // public static string nombreUsuarioLogin = "";
-    // public static string entradaUsuarioLogin = "";
-    // public static string salidaUsuarioLogin = "";
+    // Control de acceso de login
+    public static string nombreUsuarioLogin = "";
+    public static string entradaUsuarioLogin = "";
+    public static string salidaUsuarioLogin = "";
 
 }
 }
