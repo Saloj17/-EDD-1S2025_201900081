@@ -268,7 +268,6 @@ public class CargaMasivaWindow : Window
         MessageDialog md = new MessageDialog(this, DialogFlags.Modal, 
             MessageType.Info, ButtonsType.Ok, message);
         md.Run();
-        md.Destroy();
     }
 
 }

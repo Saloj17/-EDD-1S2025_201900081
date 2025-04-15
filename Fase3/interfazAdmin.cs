@@ -117,9 +117,9 @@ public class interfazAdmin : Window
                 Application.Run();
                 break;
             case "Generar Servicios":
-                // Application.Init();
-                // new generarServicio();
-                // Application.Run();
+                Application.Init();
+                new generarServicio();
+                Application.Run();
                 break;
             case "Generar Reportes":
                 // Application.Init();

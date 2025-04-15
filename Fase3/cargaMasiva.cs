@@ -346,6 +346,7 @@ public class CargaMasivaWindow : Window
             MessageType.Info, ButtonsType.Ok, message);
         md.Run();
         md.Destroy();
+        md.Dispose();
     }
 
 }

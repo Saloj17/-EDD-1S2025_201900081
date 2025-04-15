@@ -178,6 +178,8 @@ public class generarServicio : Window
               MessageType.Info, ButtonsType.Ok, message))
         {
             md.Run();
+            md.Destroy();
+            md.Dispose();
         }
     }
 }

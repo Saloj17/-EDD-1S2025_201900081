@@ -78,6 +78,7 @@ public class LoginAdmin : Window
                     MessageType.Error, ButtonsType.Close, "Credenciales incorrectas");
                 md.Run();
                 md.Destroy();
+                md.Dispose();
             }
         };
 

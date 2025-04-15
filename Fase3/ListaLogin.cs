@@ -117,9 +117,6 @@ namespace Estructuras
         File.WriteAllText(rutaArchivo, json);
         
         Console.WriteLine($"Archivo JSON generado en: {rutaArchivo}");
-        
-        // Abrir con el visor predeterminado
-        AbrirArchivo(rutaArchivo);
     }
 
     public string ObtenerFechaActualFormateada()

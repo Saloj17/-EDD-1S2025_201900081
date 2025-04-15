@@ -123,6 +123,7 @@ public class visualizarUsuario : Window
                 MessageType.Warning, ButtonsType.Ok, "Por favor ingrese un ID válido");
             md.Run();
             md.Destroy();
+            md.Dispose();
             return;
         }
 
@@ -147,6 +148,7 @@ public class visualizarUsuario : Window
                 MessageType.Warning, ButtonsType.Ok, "El id ingresado no existe");
             md.Run();
             md.Destroy();
+            md.Dispose();
         }
     }
 

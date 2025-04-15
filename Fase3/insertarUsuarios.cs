@@ -165,6 +165,8 @@ public class insertarUsuarios : Window
               MessageType.Info, ButtonsType.Ok, message))
         {
             md.Run();
+            md.Destroy();
+            md.Dispose();
         }
     }
 }

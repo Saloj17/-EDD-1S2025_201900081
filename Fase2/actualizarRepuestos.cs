@@ -129,10 +129,7 @@ public class ActualizarRepuestoWindow : Window
             id = int.Parse(idEntry.Text);
         }
         catch (FormatException) {
-            MessageDialog md = new MessageDialog(this, DialogFlags.Modal, 
-                MessageType.Warning, ButtonsType.Ok, "Por favor ingrese un ID válido");
-            md.Run();
-            md.Destroy();
+            ShowMessage("Por favor ingrese un ID válido");
             return;
         }
         if (Datos.repuestosArbol.ExisteNodoPorId(id))
@@ -166,10 +163,7 @@ public class ActualizarRepuestoWindow : Window
             id = int.Parse(idEntry.Text);
         }
         catch (FormatException) {
-            MessageDialog md = new MessageDialog(this, DialogFlags.Modal, 
-                MessageType.Warning, ButtonsType.Ok, "Por favor ingrese un ID válido");
-            md.Run();
-            md.Destroy();
+            ShowMessage("Por favor ingrese un ID válido");
             return;
         }
 
