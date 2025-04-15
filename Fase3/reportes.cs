@@ -3,13 +3,14 @@ using System;
 using System.Diagnostics;
 using System.Collections.Generic;
 using Estructuras;
+using System.IO;
 
-public class interfazAdmin : Window
+public class reportes : Window
 {
-    public interfazAdmin() : base("Administrador")
+    public reportes() : base("Reportes")
     {
         // Configuración de la ventana
-        SetDefaultSize(400, 450);
+        SetDefaultSize(400, 200);
         SetPosition(WindowPosition.Center);
         BorderWidth = 15;
         DeleteEvent += (sender, e) => Application.Quit();
@@ -19,7 +20,7 @@ public class interfazAdmin : Window
         Add(mainBox);
 
         // Título
-        Label titleLabel = new Label("<span font='18' weight='bold'>Administrador</span>");
+        Label titleLabel = new Label("<span font='18' weight='bold'>Reportes</span>");
         titleLabel.UseMarkup = true;
         titleLabel.Justify = Justification.Center;
         titleLabel.MarginBottom = 15;
@@ -27,15 +28,14 @@ public class interfazAdmin : Window
 
         // Crear botones para cada opción
         string[] opciones = {
-            "Cargas Masivas",
-            "Inserción de Usuarios",
-            "Visualización de Usuarios",
-            "Visualización de Repuestos",
-            "Visualización de Logueo",
-            "Generar Servicios",
-            "Generar Reportes",
-            "Generar Backup",
-            "Cargar Backup"
+            "Usuarios",
+            "Vehículos",
+            "Repuestos",
+            "Servicios",
+            "Facturas",
+            "Grafo no Dirigido",
+            "Control de Logueo"
+
         };
 
         foreach (string opcion in opciones)
@@ -59,10 +59,10 @@ public class interfazAdmin : Window
         btn.ModifyFg(StateType.Normal, new Gdk.Color(255, 255, 255)); // Texto blanco
         btn.ModifyBg(StateType.Prelight, new Gdk.Color(70, 140, 210)); // Azul claro al pasar mouse
         btn.Relief = ReliefStyle.None;
-
+        
         // Asignar evento según la opción
         btn.Clicked += (sender, e) => AccionBoton(texto);
-
+        
         return btn;
     }
 
@@ -73,62 +73,44 @@ public class interfazAdmin : Window
         btn.ModifyBg(StateType.Normal, new Gdk.Color(0, 150, 0)); // Verde
         btn.ModifyFg(StateType.Normal, new Gdk.Color(255, 255, 255)); // Texto blanco
         btn.Relief = ReliefStyle.None;
-        btn.Clicked += (sender, e) =>
-        {
+        btn.Clicked += (sender, e) => {
             this.Destroy(); // Cierra esta ventana
             Application.Quit(); // Cierra la aplicación completamente
         };
-        return btn;
+        return btn; 
     }
 
     private void AccionBoton(string opcion)
     {
         // Aquí puedes implementar la lógica para cada botón
         Console.WriteLine($"Acción: {opcion}");
-
+        
         // Ejemplo de cómo manejar diferentes opciones:
-        switch (opcion)
+        switch(opcion)
         {
-            case "Cargas Masivas":
-                Application.Init();
-                new CargaMasivaWindow();
-                Application.Run();
+            case "Usuarios":
+                Datos.blockchain.GenerarGraphviz(); 
                 break;
-            case "Inserción de Usuarios":
-                Application.Init();
-                new insertarUsuarios();
-                Application.Run();
+            case "Vehículos":
+                Datos.vehiculosLista.GenerarGraphviz();
                 break;
-            case "Visualización de Usuarios":
-                Application.Init();
-                new visualizarUsuario();
-                Application.Run();
+            case "Repuestos":
+                Datos.repuestosArbol.GenerarGraphviz();
                 break;
-            case "Visualización de Repuestos":
-                Application.Init();
-                new visualizarRepuestos();
-                Application.Run();
+            case "Servicios":
+                Datos.serviciosArbol.GenerarGraphviz();
                 break;
-            case "Visualización de Logueo":
+            case "Facturas":
+                // Datos.facturasArbol.GenerarGraphviz();
+                break;
+            case "Grafo no Dirigido":
+                Datos.grafoLista.GenerarGraphviz();
+                break;
+            case "Control de Logueo":
                 Datos.loginLista.GenerarJson();
-                // Datos.loginLista.MostrarLista();
                 Application.Init();
                 new visualizarLogin("Reportes\\listaLogin.json");
                 Application.Run();
-                break;
-            case "Generar Servicios":
-                Application.Init();
-                new generarServicio();
-                Application.Run();
-                break;
-            case "Generar Reportes":
-                Application.Init();
-                new reportes();
-                Application.Run();
-                break;
-            case "Generar Backup":
-                break;
-            case "Cargar Backup":
                 break;
         }
     }

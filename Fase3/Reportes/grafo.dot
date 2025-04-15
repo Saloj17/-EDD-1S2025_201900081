@@ -37,6 +37,16 @@ R1 [label="R1
  Detalles: Filtra impurezas del aceite del motor. 
  Costo: 25.5"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
 V7 -- R1 [dir=normal];
+V8[label="V8 
+ Id Usuario: 6
+ Marca: Kia Sportage
+ Modelo: 2016 
+ Placa: XCY1V3B"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R1 [label="R1 
+ Repuesto: Filtro de aceite 
+ Detalles: Filtra impurezas del aceite del motor. 
+ Costo: 25.5"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V8 -- R1 [dir=normal];
 V9[label="V9 
  Id Usuario: 7
  Marca: Mazda CX-5

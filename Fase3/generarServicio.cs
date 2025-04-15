@@ -144,8 +144,6 @@ public class generarServicio : Window
                     detallesEntry.Text = "";
                     costoEntry.Text = "";
                     ShowMessage("Servicio creado exitosamente");
-
-                    Datos.serviciosArbol.GenerarGraphviz();
                 }
                 else{
                     idEntry.Text = "";
