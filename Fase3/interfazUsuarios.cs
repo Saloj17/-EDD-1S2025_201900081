@@ -27,10 +27,9 @@ public class interfazUsuarios : Window
 
         // Crear botones para cada opción
         string[] opciones = {
-            "Insertar Vehículo",
+            "Visualización de Vehículos",
             "Visualización de Servicios",
-            "Visualización de Facturas",
-            "Cancelar Facturas"
+            "Visualización de Facturas"
         };
 
         foreach (string opcion in opciones)
@@ -86,27 +85,21 @@ public class interfazUsuarios : Window
         // Ejemplo de cómo manejar diferentes opciones:
         switch(opcion)
         {
-            case "Insertar Vehículo":
-                // Application.Init();
-                // new insertarVehiculos();
-                // Application.Run();
+            case "Visualización de Vehículos":
+                Application.Init();
+                new visualizarVehiculos();
+                Application.Run();
                 break;
             case "Visualización de Servicios":
-                // Application.Init();            
-                // new visualizarServicios();                   
-                // Application.Run(); 
+                Application.Init();            
+                new visualizarServiciosUsuarios();                   
+                Application.Run(); 
                 break;
             case "Visualización de Facturas":
                 // Application.Init();
                 // new ActualizarRepuestoWindow();
                 // Application.Run();
                 break;
-            case "Cancelar Facturas":
-                // Application.Init();
-                // new visualizarRepuestos();
-                // Application.Run();
-                break;
-            // ... otras opciones
         }
     }
 }

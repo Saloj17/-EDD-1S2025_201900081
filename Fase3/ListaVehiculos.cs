@@ -201,6 +201,36 @@ namespace Estructuras
             Process.Start(new ProcessStartInfo("Reportes\\vehiculos.png") { UseShellExecute = true });
         }
 
+        //Metodo que devuelve un arreglo de nodos
+        public NodoVehiculo[] ObtenerArregloNodos()
+        {
+            int count = ContarNodos();
+            NodoVehiculo[] arreglo = new NodoVehiculo[count];
+            NodoVehiculo? actual = primero;
+            int index = 0;
+
+            while (actual != null)
+            {
+                arreglo[index] = actual;
+                actual = actual.Siguiente;
+                index++;
+            }
+
+            return arreglo;
+        }
+
+        //Metodo que cuenta los nodos de la lista
+        private int ContarNodos()
+        {
+            int count = 0;
+            NodoVehiculo? actual = primero;
+            while (actual != null)
+            {
+                count++;
+                actual = actual.Siguiente;
+            }
+            return count;
+        }
 
 
 
