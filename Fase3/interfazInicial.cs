@@ -87,24 +87,17 @@ public class interfazInicial : Window
                 Application.Run();               
                 break;
             case "Usuarios":
-                // if (Datos.blockchain.Chain.Count > 1)
-                // {
-                //     Console.WriteLine(Datos.blockchain.Chain.Count);
-                //     Application.Init();              
-                //     new LoginUsuarios();                  
-                //     Application.Run();               
-                // }
-                // else
-                // {
-                //     // Mostrar un mensaje "No hay usuarios registrados"
-                //     MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "No hay usuarios registrados.");
-                //     md.Run();
-                //     md.Destroy();            
-                // }              
-                // break;
-                Application.Init();
-                new LoginUsuarios();
-                Application.Run();
+                if (Datos.blockchain.Chain.Count > 1)
+                {
+                    Console.WriteLine(Datos.blockchain.Chain.Count);
+                    Application.Init();              
+                    new LoginUsuarios();                  
+                    Application.Run();               
+                }
+                else
+                {
+                    Datos.msg(this,"No hay usuarios.");           
+                }              
                 break;
         }
     }

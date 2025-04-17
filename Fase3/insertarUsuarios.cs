@@ -119,7 +119,7 @@ public class insertarUsuarios : Window
         // Validar campos
         if (string.IsNullOrWhiteSpace(idEntry.Text) || string.IsNullOrWhiteSpace(nombresEntry.Text) || string.IsNullOrWhiteSpace(apellidosEntry.Text) || string.IsNullOrWhiteSpace(correoEntry.Text) || string.IsNullOrWhiteSpace(edadEntry.Text) || string.IsNullOrWhiteSpace(contraseniaEntry.Text))
         {
-            ShowMessage("Por favor, complete todos los campos.");
+            Datos.msg(this,"Por favor, complete todos los campos.");
             return;
         }
         if(!Datos.blockchain.ExisteUsuarioId(int.Parse(idEntry.Text))){
@@ -143,10 +143,10 @@ public class insertarUsuarios : Window
             correoEntry.Text = "";
             edadEntry.Text = "";
             contraseniaEntry.Text = "";
-            ShowMessage("Usuario creado exitosamente");
+            Datos.msg(this,"Usuario creado exitosamente");
         }
         else{
-            ShowMessage($"El usuario con id: {idEntry.Text} \nYa existe");
+            Datos.msg(this,$"El usuario con id: {idEntry.Text} ya existe");
             idEntry.Text = "";
             return;
         }
@@ -159,14 +159,4 @@ public class insertarUsuarios : Window
         Application.Quit();
     }
 
-    private void ShowMessage(string message)
-    {
-        using (var md = new MessageDialog(this, DialogFlags.Modal, 
-              MessageType.Info, ButtonsType.Ok, message))
-        {
-            md.Run();
-            md.Destroy();
-            md.Dispose();
-        }
-    }
 }

@@ -114,7 +114,7 @@ public class generarServicio : Window
         // Validar campos
         if (string.IsNullOrWhiteSpace(idEntry.Text) || string.IsNullOrWhiteSpace(idRepuestoEntry.Text) || string.IsNullOrWhiteSpace(idVehiculoEntry.Text) || string.IsNullOrWhiteSpace(detallesEntry.Text) || string.IsNullOrWhiteSpace(costoEntry.Text))
         {
-            ShowMessage("Por favor complete todos los campos");
+            Datos.msg(this,"Por favor complete todos los campos");
             return;
         }
         if(Datos.vehiculosLista.ExisteVehiculoId(int.Parse(idVehiculoEntry.Text))){
@@ -143,22 +143,24 @@ public class generarServicio : Window
                     idVehiculoEntry.Text = "";
                     detallesEntry.Text = "";
                     costoEntry.Text = "";
-                    ShowMessage("Servicio creado exitosamente");
+                    Datos.msg(this,"Servicio creado exitosamente");
                 }
                 else{
                     idEntry.Text = "";
-                    ShowMessage("El servicio ya existe");
+                    Datos.msg(this,"El servicio ya existe");
                     return;
                 }
                 
             }
             else{
-                ShowMessage("El repuesto no existe");
+                idRepuestoEntry.Text = "";
+                Datos.msg(this,"El repuesto no existe");
                 return;
             }
         }
         else{
-            ShowMessage("El vehiculo no existe");
+            idVehiculoEntry.Text = "";
+            Datos.msg(this,"El vehiculo no existe");
             return;
         }
     }
@@ -168,16 +170,5 @@ public class generarServicio : Window
     {
         this.Destroy();
         Application.Quit();
-    }
-
-    private void ShowMessage(string message)
-    {
-        using (var md = new MessageDialog(this, DialogFlags.Modal, 
-              MessageType.Info, ButtonsType.Ok, message))
-        {
-            md.Run();
-            md.Destroy();
-            md.Dispose();
-        }
     }
 }

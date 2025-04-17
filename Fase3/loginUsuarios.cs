@@ -79,11 +79,7 @@ public class LoginUsuarios : Window
             }
             else
             {
-                MessageDialog md = new MessageDialog(this, DialogFlags.Modal,
-                    MessageType.Error, ButtonsType.Close, "Credenciales incorrectas");
-                md.Run();
-                md.Destroy();
-                md.Dispose();
+                Datos.msg(this, "Credenciales incorrectas");
             }
         };
 

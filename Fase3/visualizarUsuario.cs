@@ -119,11 +119,7 @@ public class visualizarUsuario : Window
             id = int.Parse(idEntry.Text);
         }
         catch (FormatException) {
-            MessageDialog md = new MessageDialog(this, DialogFlags.Modal, 
-                MessageType.Warning, ButtonsType.Ok, "Por favor ingrese un ID válido");
-            md.Run();
-            md.Destroy();
-            md.Dispose();
+            Datos.msg(this,"Por favor ingrese un ID válido");
             return;
         }
 
@@ -144,11 +140,7 @@ public class visualizarUsuario : Window
             edadLabel.Text = "";
             contraseniaLabel.Text = "";
 
-            MessageDialog md = new MessageDialog(this, DialogFlags.Modal, 
-                MessageType.Warning, ButtonsType.Ok, "El id ingresado no existe");
-            md.Run();
-            md.Destroy();
-            md.Dispose();
+            Datos.msg(this,"El id ingresado no existe");
         }
     }
 

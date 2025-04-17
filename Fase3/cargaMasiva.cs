@@ -82,7 +82,6 @@ public class CargaMasivaWindow : Window
 
     private void CargarUsuarios(object sender, EventArgs e)
     {
-        // ShowMessage("Carga de usuarios iniciada");
 
         FileChooserDialog filechooser = new FileChooserDialog("Seleccione un archivo",
                     this,
@@ -153,7 +152,6 @@ public class CargaMasivaWindow : Window
 
     private void CargarVehiculos(object sender, EventArgs e)
     {
-        // ShowMessage("Carga de vehículos iniciada");
         FileChooserDialog filechooser = new FileChooserDialog("Seleccione un archivo",
                     this,
                     FileChooserAction.Open,
@@ -213,7 +211,6 @@ public class CargaMasivaWindow : Window
 
     private void CargarRepuestos(object sender, EventArgs e)
     {
-        // ShowMessage("Carga de repuestos iniciada");
         FileChooserDialog filechooser = new FileChooserDialog("Seleccione un archivo",
                     this,
                     FileChooserAction.Open,
@@ -274,7 +271,6 @@ public class CargaMasivaWindow : Window
 
     private void CargarServicios(object sender, EventArgs e)
     {
-        // ShowMessage("Carga de servicios iniciada");
         FileChooserDialog filechooser = new FileChooserDialog("Seleccione un archivo",
                     this,
                     FileChooserAction.Open,
@@ -338,15 +334,6 @@ public class CargaMasivaWindow : Window
                 filechooser.Destroy();
                 Datos.serviciosArbol.RecorridoEnOrden();
                 // Datos.serviciosArbol.GenerarGraphviz();
-    }
-
-    private void ShowMessage(string message)
-    {
-        MessageDialog md = new MessageDialog(this, DialogFlags.Modal, 
-            MessageType.Info, ButtonsType.Ok, message);
-        md.Run();
-        md.Destroy();
-        md.Dispose();
     }
 
 }
