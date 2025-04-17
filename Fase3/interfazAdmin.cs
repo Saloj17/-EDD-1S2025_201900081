@@ -1,5 +1,5 @@
-using Gtk;
 using System;
+using Gtk;
 using System.Diagnostics;
 using System.Collections.Generic;
 using Estructuras;
@@ -25,6 +25,15 @@ public class interfazAdmin : Window
         titleLabel.MarginBottom = 15;
         mainBox.PackStart(titleLabel, false, false, 0);
 
+        // Crear un contenedor para los botones con scroll
+        ScrolledWindow scrolledWindow = new ScrolledWindow();
+        scrolledWindow.ShadowType = ShadowType.EtchedIn;
+        scrolledWindow.SetPolicy(PolicyType.Automatic, PolicyType.Automatic); // Habilitar scroll vertical y horizontal si es necesario
+
+        // Contenedor interno para los botones (VBox)
+        VBox buttonsBox = new VBox(false, 5);
+        scrolledWindow.AddWithViewport(buttonsBox); // Añadir el contenedor de botones al Scroll
+
         // Crear botones para cada opción
         string[] opciones = {
             "Cargas Masivas",
@@ -41,8 +50,11 @@ public class interfazAdmin : Window
         foreach (string opcion in opciones)
         {
             Button btn = CrearBotonOpcion(opcion);
-            mainBox.PackStart(btn, false, false, 5);
+            buttonsBox.PackStart(btn, false, false, 5);
         }
+
+        // Añadir el ScrolledWindow al contenedor principal
+        mainBox.PackStart(scrolledWindow, true, true, 0);
 
         // Botón Salir
         Button btnSalir = CrearBotonSalir();
@@ -111,7 +123,6 @@ public class interfazAdmin : Window
                 break;
             case "Visualización de Logueo":
                 Datos.loginLista.GenerarJson();
-                // Datos.loginLista.MostrarLista();
                 Application.Init();
                 new visualizarLogin("Reportes\\listaLogin.json");
                 Application.Run();
