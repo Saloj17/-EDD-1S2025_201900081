@@ -66,12 +66,13 @@ public class LoginAdmin : Window
         {
             if (emailEntry.Text == "admin@usac.com" && passwordEntry.Text == "admin123")
             {
+                this.Destroy();
+                Application.Quit();
+
                 Application.Init();
                 new interfazAdmin();
                 Application.Run();  
                 
-                this.Destroy();
-                Application.Quit();
             }
             else
             {

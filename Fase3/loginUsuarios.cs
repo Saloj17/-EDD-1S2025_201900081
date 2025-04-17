@@ -69,13 +69,16 @@ public class LoginUsuarios : Window
                 Datos.entradaUsuarioLogin = Datos.loginLista.ObtenerFechaActualFormateada();
                 // Guardar el ID del usuario en la variable estática
                 Datos.idUsuarioLogin = Datos.blockchain.BuscarUsuarioCorreo(emailEntry.Text).ID; // ID del usuario encontrado
-                Application.Init();                  // Inicializa GTK
-                new interfazUsuarios();                   // Crea la ventana
-                Application.Run();                  // Bucle principal 
+                
 
                 
                 this.Destroy();
-                Application.Quit();  
+                Application.Quit(); 
+
+                
+                Application.Init();                  // Inicializa GTK
+                new interfazUsuarios();                   // Crea la ventana
+                Application.Run();                  // Bucle principal  
             }
             else
             {

@@ -29,16 +29,33 @@ namespace Estructuras
         public static string salidaUsuarioLogin = "";
 
         //Metodo para mostrar un mensaje en una ventana emergente
-        public static void msg(Window parent, string msg)
+        public static void msg(Window parent, string message)
         {
-            using (var md = new MessageDialog(
-                parent,
-                DialogFlags.Modal,
-                MessageType.Info,
-                ButtonsType.Ok,
-                msg))
+            try
             {
-                md.Run();
+                // Crear el diálogo
+                var dialog = new MessageDialog(
+                    parent,
+                    DialogFlags.Modal,
+                    MessageType.Info,
+                    ButtonsType.Ok,
+                    message);
+
+                dialog.SetPosition(WindowPosition.Center);
+                dialog.Title = "Mensaje";
+
+                // Manejar la respuesta correctamente
+                dialog.Response += (s, args) =>
+                {
+                    dialog.Hide(); // Primero ocultar
+                    Application.Invoke((sender, e) => dialog.Dispose()); // Luego liberar en el hilo principal
+                };
+
+                dialog.Run();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error mostrando mensaje: {ex.Message}");
             }
         }
 

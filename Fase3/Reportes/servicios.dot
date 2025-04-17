@@ -18,5 +18,5 @@ fontname = "Helvetica-Bold";
   8 -> 9;
  9 [label="Id: 9 \n Repuesto: 15  |  Vehículo: 3 \n Detalles: Reemplazo de correa de distribución \n Costo: 300" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
   9 -> 100;
- 100 [label="Id: 100 \n Repuesto: 8  |  Vehículo: 10 \n Detalles: prueba2 \n Costo: 100" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
+ 100 [label="Id: 100 \n Repuesto: 8  |  Vehículo: 14 \n Detalles: prueba \n Costo: 100" style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18 ];
 }
