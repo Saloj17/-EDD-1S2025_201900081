@@ -138,6 +138,7 @@ public class interfazAdmin : Window
                 Application.Run();
                 break;
             case "Generar Backup":
+                Datos.blockchain.GenerarJson();
                 break;
             case "Cargar Backup":
                 break;

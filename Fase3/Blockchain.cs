@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Security.Cryptography;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Estructuras
 {
@@ -115,7 +117,7 @@ namespace Estructuras
                     return true;
                 }
             }
-            return false; 
+            return false;
         }
 
         // Metodo para buscar usuario por su correo
@@ -141,7 +143,7 @@ namespace Estructuras
                     return true;
                 }
             }
-            return false; 
+            return false;
         }
 
         // Metodo para buscar usuario por su ID
@@ -171,5 +173,55 @@ namespace Estructuras
                 Console.WriteLine($"ID: {block.Data.ID} \nNombre: {block.Data.Nombres}\nApellido: {block.Data.Apellidos}\nCorreo: {block.Data.Correo}\nEdad: {block.Data.Edad}\nContraseña: {block.Data.Contrasenia}");
             }
         }
+
+
+        private static readonly string BaseDirectory = "C:\\Users\\SALOJ\\Desktop\\[EDD-25]\\-EDD-1S2025_201900081\\Fase3\\backup";
+
+        public void GenerarJson()
+        {
+            List<Usuario> lista = ObtenerLista();
+
+            // Proyectar solo las propiedades necesarias
+            var datosFiltrados = lista.Select(nodo => new
+            {
+
+                Id = nodo.ID,
+                Nombres = nodo.Nombres,
+                Apellidos = nodo.Apellidos,
+                Correo = nodo.Correo,
+                Edad = nodo.Edad,
+                Contrasenia = nodo.Contrasenia,
+            }).ToList();
+
+            string json = JsonSerializer.Serialize(datosFiltrados, new JsonSerializerOptions
+            {
+                WriteIndented = true
+            });
+
+            // Crear el directorio si no existe
+            Directory.CreateDirectory(BaseDirectory);
+
+            // Ruta completa del archivo
+            string rutaArchivo = Path.Combine(BaseDirectory, "backupUsuarios.json");
+
+            File.WriteAllText(rutaArchivo, json);
+
+            Console.WriteLine($"Archivo JSON generado en: {rutaArchivo}");
+        }
+        // Metodo para obtener la lista de usuarios
+        public List<Usuario> ObtenerLista()
+        {
+            List<Usuario> lista = new List<Usuario>();
+            foreach (Block block in Chain)
+            {
+                if (block.Data.ID == 0)
+                {
+                    continue; // Ignorar el bloque génesis
+                }
+                lista.Add(block.Data);
+            }
+            return lista;
+        }
+
     }
 }
