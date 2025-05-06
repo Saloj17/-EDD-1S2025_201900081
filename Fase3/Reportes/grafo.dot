@@ -62,16 +62,6 @@ V14[label="V14
  Marca: Audi A4
  Modelo: 2017 
  Placa: QAZ1W2S"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-R8 [label="R8 
- Repuesto: Filtro de aire 
- Detalles: Filtra partículas del aire que entra al motor. 
- Costo: 18.5"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-V14 -- R8 [dir=normal];
-V14[label="V14 
- Id Usuario: 10
- Marca: Audi A4
- Modelo: 2017 
- Placa: QAZ1W2S"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
 R3 [label="R3 
  Repuesto: Pastillas de freno 
  Detalles: Componente esencial para el sistema de frenado. 

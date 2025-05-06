@@ -1,72 +1,115 @@
 [
     {
         "Id": 1,
-        "Id_Repuesto": 3,
-        "Id_Vehiculo": 14,
-        "Detalles": "Cambio de aceite y filtro",
-        "Costo": 150.00
-    },
-    {
-        "Id": 2,
-        "Id_Repuesto": 8,
-        "Id_Vehiculo": 5,
-        "Detalles": "Reemplazo de pastillas de freno",
-        "Costo": 200.00
-    },
-    {
-        "Id": 3,
-        "Id_Repuesto": 12,
-        "Id_Vehiculo": 19,
-        "Detalles": "Alineación y balanceo",
-        "Costo": 120.00
-    },
-    {
-        "Id": 4,
-        "Id_Repuesto": 1,
-        "Id_Vehiculo": 7,
-        "Detalles": "Cambio de batería",
-        "Costo": 180.00
-    },
-    {
-        "Id": 5,
-        "Id_Repuesto": 17,
-        "Id_Vehiculo": 2,
-        "Detalles": "Reparación de sistema de escape",
-        "Costo": 250.00
-    },
-    {
-        "Id": 6,
-        "Id_Repuesto": 6,
-        "Id_Vehiculo": 11,
-        "Detalles": "Reemplazo de neumáticos",
-        "Costo": 400.00
-    },
-    {
-        "Id": 7,
-        "Id_Repuesto": 20,
-        "Id_Vehiculo": 16,
-        "Detalles": "Diagnóstico computarizado",
-        "Costo": 80.00
-    },
-    {
-        "Id": 8,
-        "Id_Repuesto": 4,
-        "Id_Vehiculo": 9,
-        "Detalles": "Limpieza de inyectores",
-        "Costo": 90.00
-    },
-    {
+        "Id_repuesto": 2,
+        "Id_vehiculo": 2,
+        "Detalles": "Calificacion servicio 1",
+        "Costo": 75,
+        "MetodoPago": "Efectivo"
+      },
+      {
         "Id": 9,
-        "Id_Repuesto": 15,
-        "Id_Vehiculo": 3,
-        "Detalles": "Reemplazo de correa de distribución",
-        "Costo": 300.00
-    },
-    {
+        "Id_repuesto": 5,
+        "Id_vehiculo": 12,
+        "Detalles": "Calificacion servicio 2",
+        "Costo": 100,
+        "MetodoPago": "Tarjeta"
+      },
+      {
+        "Id": 3,
+        "Id_repuesto": 4,
+        "Id_vehiculo": 4,
+        "Detalles": "Calificacion servicio 3",
+        "Costo": 50,
+        "MetodoPago": "Efectivo"
+      },
+      {
+        "Id": 4,
+        "Id_repuesto": 5,
+        "Id_vehiculo": 5,
+        "Detalles": "Calificacion servicio 4",
+        "Costo": 200,
+        "MetodoPago": "Transferencia"
+      },
+      {
+        "Id": 5,
+        "Id_repuesto": 6,
+        "Id_vehiculo": 6,
+        "Detalles": "Calificacion servicio 5",
+        "Costo": 150,
+        "MetodoPago": "Efectivo"
+      },
+      {
+        "Id": 6,
+        "Id_repuesto": 7,
+        "Id_vehiculo": 7,
+        "Detalles": "Calificacion servicio 6",
+        "Costo": 80,
+        "MetodoPago": "Tarjeta"
+      },
+      {
+        "Id": 7,
+        "Id_repuesto": 4,
+        "Id_vehiculo": 8,
+        "Detalles": "Calificacion servicio 7",
+        "Costo": 120,
+        "MetodoPago": "Efectivo"
+      },
+      {
+        "Id": 8,
+        "Id_repuesto": 2,
+        "Id_vehiculo": 9,
+        "Detalles": "Calificacion servicio 8",
+        "Costo": 90,
+        "MetodoPago": "Transferencia"
+      },
+      {
         "Id": 10,
-        "Id_Repuesto": 10,
-        "Id_Vehiculo": 18,
-        "Detalles": "Reparación de aire acondicionado",
-        "Costo": 220.00
-    }
-]
+        "Id_repuesto": 3,
+        "Id_vehiculo": 10,
+        "Detalles": "Calificacion servicio 9",
+        "Costo": 110,
+        "MetodoPago": "Efectivo"
+      },
+      {
+        "Id": 11,
+        "Id_repuesto": 3,
+        "Id_vehiculo": 11,
+        "Detalles": "Calificacion servicio 10",
+        "Costo": 60,
+        "MetodoPago": "Tarjeta"
+      },
+      {
+        "Id": 12,
+        "Id_repuesto": 4,
+        "Id_vehiculo": 12,
+        "Detalles": "Calificacion servicio 11",
+        "Costo": 130,
+        "MetodoPago": "Transferencia"
+      },
+      {
+        "Id": 13,
+        "Id_repuesto": 2,
+        "Id_vehiculo": 13,
+        "Detalles": "Calificacion servicio 12",
+        "Costo": 140,
+        "MetodoPago": "Efectivo"
+      },
+      {
+        "Id": 14,
+        "Id_repuesto": 10,
+        "Id_vehiculo": 14,
+        "Detalles": "Calificacion servicio 13",
+        "Costo": 160,
+        "MetodoPago": "Tarjeta"
+      },
+      {
+        "Id": 15,
+        "Id_repuesto": 1,
+        "Id_vehiculo": 15,
+        "Detalles": "Calificacion servicio 14",
+        "Costo": 170,
+        "MetodoPago": "Transferencia"
+      }
+      
+    ]
