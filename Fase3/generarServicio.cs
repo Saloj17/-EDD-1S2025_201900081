@@ -120,22 +120,44 @@ public class generarServicio : Window
         if(Datos.vehiculosLista.ExisteVehiculoId(int.Parse(idVehiculoEntry.Text))){
             if(Datos.repuestosArbol.ExisteNodoPorId(int.Parse(idRepuestoEntry.Text))){
                 if (!Datos.serviciosArbol.Existe(int.Parse(idEntry.Text))){
-                    NodoServicio servicio = new NodoServicio(int.Parse(idEntry.Text),int.Parse(idRepuestoEntry.Text), int.Parse(idVehiculoEntry.Text), detallesEntry.Text, double.Parse(costoEntry.Text));
+
+
+                    // generarar un id unico para la factura
+                    Random random = new Random();
+                    int idFactura = random.Next(1, 9999);
+
+                    // generar la fecha actual dd/MM/yyyy
+                    DateTime fecha = DateTime.Now;
+                    string fechaString = fecha.ToString("dd/MM/yyyy");
+
+                    
+                    // generar el pago en aleatorio entre: efectivo, tarjeta, transferencia
+                    string[] pagos = { "efectivo", "tarjeta", "transferencia" };
+                    string pago = pagos[random.Next(0, 3)];
+
+
+
+                    NodoServicio servicio = new NodoServicio(int.Parse(idEntry.Text),int.Parse(idRepuestoEntry.Text), int.Parse(idVehiculoEntry.Text), detallesEntry.Text, double.Parse(costoEntry.Text), pago);
                     Datos.serviciosArbol.Insertar(servicio);
 
                     Datos.grafoLista.Insertar(int.Parse(idVehiculoEntry.Text), int.Parse(idRepuestoEntry.Text));
 
-                    // // generar un id unico para la factura
-                    // Random random = new Random();
-                    // int idFactura = random.Next(1, 9999);
-                    // if(!Datos.facturasArbol.BuscarFacturaBool(idFactura)){
-                    //     Datos.facturasArbol.Insertar(idFactura, int.Parse(idEntry.Text), double.Parse(costoEntry.Text));
-                    //     ShowMessage("Factura generada con exito, el id de la factura es: " + idFactura);
-                    // }
-                    // else{
-                    //     ShowMessage("El id de la factura ya existe, por favor vuelva a intentarlo");
-                    //     return;
-                    // }
+
+
+                    
+
+                    
+                    if (!Datos.factura.existeFactura(idFactura))
+                    {
+                        // Crear la factura
+                        Datos.factura.Insert(idFactura, int.Parse(idEntry.Text), double.Parse(costoEntry.Text), fechaString, pago);
+                        Datos.msg(this,"Factura generada con exito, el id de la factura es: " + idFactura);
+                    }
+                    else
+                    {
+                        Datos.msg(this,"El id de la factura ya existe, por favor vuelva a intentarlo");
+                        return;
+                    }
 
                     // vaciamos los campos
                     idEntry.Text = "";

@@ -15,6 +15,7 @@ namespace Estructuras
         public static AVLRepuesto repuestosArbol = new AVLRepuesto();
         public static ListaGrafos grafoLista = new ListaGrafos();
         public static Blockchain blockchain = new Blockchain();
+        public static MerkleTree factura = new MerkleTree();
 
         // public static ArbolBFactura facturasArbol = new ArbolBFactura();
         public static ListaLogin loginLista = new ListaLogin();

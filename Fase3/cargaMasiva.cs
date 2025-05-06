@@ -299,17 +299,39 @@ public class CargaMasivaWindow : Window
                             foreach (var servicio in Servicios)
                             {   
                                 // verificar si existe el id del repuesto y del vehiculo
-                                if (!Datos.repuestosArbol.ExisteNodoPorId(servicio.Id_Repuesto) || !Datos.vehiculosLista.ExisteVehiculoId(servicio.Id_Vehiculo))
+                                if (!Datos.repuestosArbol.ExisteNodoPorId(servicio.Id_repuesto) || !Datos.vehiculosLista.ExisteVehiculoId(servicio.Id_vehiculo))
                                 {
-                                    Console.WriteLine($"El repuesto con ID {servicio.Id_Repuesto} o el vehiculo con ID {servicio.Id_Vehiculo} no existe");
+                                    Console.WriteLine($"El repuesto con ID {servicio.Id_repuesto} o el vehiculo con ID {servicio.Id_vehiculo} no existe");
                                     continue;
                                 }
                                 if (!Datos.serviciosArbol.Existe(servicio.Id))
                                 {
-                                    NodoServicio nuevo = new NodoServicio(servicio.Id, servicio.Id_Repuesto, servicio.Id_Vehiculo, servicio.Detalles, servicio.Costo);
+                                    NodoServicio nuevo = new NodoServicio(servicio.Id, servicio.Id_repuesto, servicio.Id_vehiculo, servicio.Detalles, servicio.Costo, servicio.MetodoPago);
                                     Datos.serviciosArbol.Insertar(nuevo);
 
-                                    Datos.grafoLista.Insertar(servicio.Id_Vehiculo, servicio.Id_Repuesto);
+                                    Datos.grafoLista.Insertar(servicio.Id_vehiculo, servicio.Id_repuesto);
+
+                                    // generarar un id unico para la factura
+                                    Random random = new Random();
+                                    int idFactura = random.Next(1, 9999);
+
+                                    // generar la fecha actual dd/MM/yyyy
+                                    DateTime fecha = DateTime.Now;
+                                    string fechaString = fecha.ToString("dd/MM/yyyy");
+
+                                    if (!Datos.factura.existeFactura(idFactura))
+                                        {
+                                            // Crear la factura
+                                            Datos.factura.Insert(idFactura, servicio.Id,servicio.Costo, fechaString, servicio.MetodoPago);
+                                            Console.WriteLine($"Factura generada con exito, el id de la factura es: {idFactura}");
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine($"El id de la factura ya existe, por favor vuelva a intentarlo");
+                                            return;
+                                        }
+
+                                    
                                 }
                                 else
                                 {
@@ -368,8 +390,9 @@ public class Repuestoo
 public class Servicio
 {
     public int Id { get; set; }
-    public int Id_Repuesto { get; set; }
-    public int Id_Vehiculo { get; set; }
+    public int Id_repuesto { get; set; }
+    public int Id_vehiculo { get; set; }
     public string Detalles { get; set; }
     public double Costo { get; set; }
+    public string MetodoPago { get; set; }
 }

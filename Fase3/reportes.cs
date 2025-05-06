@@ -101,7 +101,7 @@ public class reportes : Window
                 Datos.serviciosArbol.GenerarGraphviz();
                 break;
             case "Facturas":
-                // Datos.facturasArbol.GenerarGraphviz();
+                Datos.factura.GenerarGraphviz();
                 break;
             case "Grafo no Dirigido":
                 Datos.grafoLista.GenerarGraphviz();
