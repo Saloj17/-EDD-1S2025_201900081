@@ -7,64 +7,144 @@ label = "Grafos
 labelloc = "t";
 fontsize = 24;
 fontname = "Helvetica-Bold";
-V3[label="V3 
- Id Usuario: 3
- Marca: Ford F-150
- Modelo: 2018 
- Placa: MNB4V6C"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-R15 [label="R15 
- Repuesto: Alternador 
- Detalles: Genera energía eléctrica mientras el motor está en marcha. 
- Costo: 135.75"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-V3 -- R15 [dir=normal];
-V5[label="V5 
- Id Usuario: 4
- Marca: Nissan Sentra
- Modelo: 2019 
- Placa: YUI8O7P"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-R8 [label="R8 
- Repuesto: Filtro de aire 
- Detalles: Filtra partículas del aire que entra al motor. 
- Costo: 18.5"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-V5 -- R8 [dir=normal];
-V7[label="V7 
+V2[label="V2 
  Id Usuario: 2
- Marca: Hyundai Tucson
- Modelo: 2020 
- Placa: HJK9L0Z"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+ Marca: Toyota Corolla
+ Modelo: 2010 
+ Placa: JKS8T5A"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R2 [label="R2 
+ Repuesto: Bujías 
+ Detalles: Componente esencial para encender la mezcla de aire y combustible. 
+ Costo: 15.75"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V2 -- R2 [dir=normal];
+V4[label="V4 
+ Id Usuario: 3
+ Marca: Nissan Altima
+ Modelo: 2012 
+ Placa: FTE6V3R"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R4 [label="R4 
+ Repuesto: Pastillas de freno traseras 
+ Detalles: Piezas para frenar el vehículo en la parte trasera. 
+ Costo: 45.3"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V4 -- R4 [dir=normal];
+V5[label="V5 
+ Id Usuario: 3
+ Marca: Chevrolet Aveo
+ Modelo: 2007 
+ Placa: BZX5D2L"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R5 [label="R5 
+ Repuesto: Amortiguadores 
+ Detalles: Componente de suspensión para absorber impactos. 
+ Costo: 95.2"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V5 -- R5 [dir=normal];
+V6[label="V6 
+ Id Usuario: 3
+ Marca: Hyundai Elantra
+ Modelo: 2015 
+ Placa: QWE3P0F"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R6 [label="R6 
+ Repuesto: Aceite de motor 
+ Detalles: Lubricante para el motor del vehículo. 
+ Costo: 18.6"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V6 -- R6 [dir=normal];
+V7[label="V7 
+ Id Usuario: 4
+ Marca: Mazda 3
+ Modelo: 2011 
+ Placa: MSD9H8A"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R7 [label="R7 
+ Repuesto: Filtro de aire 
+ Detalles: Filtra el aire que entra al motor para mejorar la combustión. 
+ Costo: 22.1"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V7 -- R7 [dir=normal];
+V8[label="V8 
+ Id Usuario: 5
+ Marca: Kia Rio
+ Modelo: 2014 
+ Placa: RT5Y4O2"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R4 [label="R4 
+ Repuesto: Pastillas de freno traseras 
+ Detalles: Piezas para frenar el vehículo en la parte trasera. 
+ Costo: 45.3"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V8 -- R4 [dir=normal];
+V9[label="V9 
+ Id Usuario: 5
+ Marca: Honda Accord
+ Modelo: 2009 
+ Placa: VBR9P1S"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R2 [label="R2 
+ Repuesto: Bujías 
+ Detalles: Componente esencial para encender la mezcla de aire y combustible. 
+ Costo: 15.75"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V9 -- R2 [dir=normal];
+V10[label="V10 
+ Id Usuario: 6
+ Marca: Subaru Impreza
+ Modelo: 2016 
+ Placa: XZJ3M5P"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R3 [label="R3 
+ Repuesto: Frenos delanteros 
+ Detalles: Piezas para frenar el vehículo en la parte delantera. 
+ Costo: 60"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V10 -- R3 [dir=normal];
+V11[label="V11 
+ Id Usuario: 6
+ Marca: BMW X3
+ Modelo: 2013 
+ Placa: BNM8D7Q"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R3 [label="R3 
+ Repuesto: Frenos delanteros 
+ Detalles: Piezas para frenar el vehículo en la parte delantera. 
+ Costo: 60"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V11 -- R3 [dir=normal];
+V12[label="V12 
+ Id Usuario: 7
+ Marca: Volkswagen Jetta
+ Modelo: 2012 
+ Placa: JXK3L9D"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R4 [label="R4 
+ Repuesto: Pastillas de freno traseras 
+ Detalles: Piezas para frenar el vehículo en la parte trasera. 
+ Costo: 45.3"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V12 -- R4 [dir=normal];
+V12[label="V12 
+ Id Usuario: 7
+ Marca: Volkswagen Jetta
+ Modelo: 2012 
+ Placa: JXK3L9D"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R5 [label="R5 
+ Repuesto: Amortiguadores 
+ Detalles: Componente de suspensión para absorber impactos. 
+ Costo: 95.2"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V12 -- R5 [dir=normal];
+V13[label="V13 
+ Id Usuario: 8
+ Marca: Toyota Camry
+ Modelo: 2014 
+ Placa: OIJ6R4F"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R2 [label="R2 
+ Repuesto: Bujías 
+ Detalles: Componente esencial para encender la mezcla de aire y combustible. 
+ Costo: 15.75"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V13 -- R2 [dir=normal];
+V14[label="V14 
+ Id Usuario: 9
+ Marca: Chevrolet Spark
+ Modelo: 2011 
+ Placa: XTR9E1Q"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+R10 [label="R10 
+ Repuesto: Batería 
+ Detalles: Fuente de energía para el vehículo. 
+ Costo: 100.5"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
+V14 -- R10 [dir=normal];
+V15[label="V15 
+ Id Usuario: 10
+ Marca: Mazda CX-5
+ Modelo: 2017 
+ Placa: VWL3P0D"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
 R1 [label="R1 
  Repuesto: Filtro de aceite 
  Detalles: Filtra impurezas del aceite del motor. 
  Costo: 25.5"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-V7 -- R1 [dir=normal];
-V9[label="V9 
- Id Usuario: 7
- Marca: Mazda CX-5
- Modelo: 2021 
- Placa: NMQ8W7E"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-R4 [label="R4 
- Repuesto: Correa de distribución 
- Detalles: Sincroniza el movimiento del cigüeñal y árbol de levas. 
- Costo: 62.3"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-V9 -- R4 [dir=normal];
-V11[label="V11 
- Id Usuario: 8
- Marca: Jeep Wrangler
- Modelo: 2013 
- Placa: POL9I8U"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-R6 [label="R6 
- Repuesto: Amortiguadores 
- Detalles: Absorbe impactos y vibraciones del camino. 
- Costo: 85.25"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-V11 -- R6 [dir=normal];
-V14[label="V14 
- Id Usuario: 10
- Marca: Audi A4
- Modelo: 2017 
- Placa: QAZ1W2S"  style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-R3 [label="R3 
- Repuesto: Pastillas de freno 
- Detalles: Componente esencial para el sistema de frenado. 
- Costo: 45.9"   style="filled" fillcolor="#96cbb0" fontname="Helvetica-Bold" fontsize = 18];
-V14 -- R3 [dir=normal];
+V15 -- R1 [dir=normal];
 }
