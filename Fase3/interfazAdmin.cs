@@ -1,6 +1,13 @@
 using System;
+using System.Collections.Generic;
+using System.Text;
+using System.IO;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Linq;
 using Gtk;
 using System.Diagnostics;
+using System.Collections;
 using System.Collections.Generic;
 using Estructuras;
 
@@ -93,6 +100,46 @@ public class interfazAdmin : Window
         return btn;
     }
 
+    public void Comprimir(string archivo, string salida, string arbol)
+    {
+
+        if (!File.Exists(archivo))
+        {
+            Console.WriteLine($"El archivo {archivo} no existe.");
+            return;
+        }
+
+        string input = File.ReadAllText(archivo);
+        var (compressed, root) = HuffmanCompression.CompressWithTree(input);
+
+        File.WriteAllText(salida, compressed);
+        File.WriteAllText(arbol, JsonSerializer.Serialize(root));
+
+        Console.WriteLine("\nArchivo comprimido y árbol guardado exitosamente.");
+
+    }
+
+    // public void Descomprimir(){
+    //     if (!File.Exists(compressedFile) || !File.Exists(treeFile))
+    //         {
+    //             Console.WriteLine("Archivo comprimido o árbol Huffman no encontrados.");
+    //             return;
+    //         }
+
+    //         string compressed = File.ReadAllText(compressedFile);
+    //         HuffmanNode root = JsonSerializer.Deserialize<HuffmanNode>(File.ReadAllText(treeFile));
+
+    //         string decompressed = HuffmanCompression.Decompress(compressed, root);
+    //         File.WriteAllText(decompressedFile, decompressed);
+    //         // Guarda el archivo descomprimido
+    //         Console.WriteLine("\nArchivo descomprimido exitosamente.");
+
+    //         /// imprimir el contenido del archivo descomprimido
+    //         /// 
+    //         string descomprimido = File.ReadAllText(decompressedFile);
+    //         Console.WriteLine("\nContenido del archivo descomprimido:");
+    // }
+
     private void AccionBoton(string opcion)
     {
         // Aquí puedes implementar la lógica para cada botón
@@ -139,6 +186,11 @@ public class interfazAdmin : Window
                 break;
             case "Generar Backup":
                 Datos.blockchain.GenerarJson();
+
+                Comprimir("Vehiculos.json", "backup\\vehiculo.edd", "backup\\vhuffman_tree.json");
+                Comprimir("Repuestos.json", "backup\\repuesto.edd", "backup\\rhuffman_tree.json");
+
+
                 break;
             case "Cargar Backup":
                 break;
